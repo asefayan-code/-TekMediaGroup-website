@@ -5,6 +5,7 @@ import { services } from '../src/data/services.ts';
 import { boPages } from '../src/data/bang-olufsen.ts';
 import { brands } from '../src/data/brands.ts';
 import { models } from '../src/data/models.ts';
+import { lenses } from '../src/data/lenses.ts';
 
 const routes: [string, string][] = [
   ['/default.aspx', '/'], ['/Default.aspx', '/'], ['/home', '/'],
@@ -26,6 +27,8 @@ const routes: [string, string][] = [
   ['/Reel-To-Reel/Reel-To-Reel.aspx', '/reel-to-reel-repair/'],
   ['/Reel-To-Reel-Models/Reel-To-Reel.aspx', '/reel-to-reel-repair/'],
 ];
+// Old lens model pages go straight to their new lens page (before the lens hub rules).
+for (const l of lenses) for (const o of l.oldPaths) routes.push([o, `/services/lens-repair/${l.slug}/`]);
 for (const s of services) for (const o of s.oldPaths ?? []) routes.push([o, `/services/${s.slug}/`]);
 for (const p of boPages) for (const o of p.oldPaths ?? []) routes.push([o, `/bang-olufsen/${p.slug}/`]);
 for (const b of brands) for (const o of b.oldPaths ?? []) routes.push([o, `/brands/${b.slug}/`]);
@@ -40,6 +43,7 @@ for (const b of brands) for (const pre of b.oldPrefixes ?? []) routes.push([`${p
 routes.push(['/Bang_and_Olufsen/*', '/bang-olufsen/']);
 routes.push(['/Audio-Recievers/*', '/hifi-audio-repair/']);
 routes.push(['/Reel-To-Reel-Models/*', '/reel-to-reel-repair/']);
+routes.push(['/LensRepair/*', '/services/lens-repair/']);
 
 const seen = new Set<string>();
 const lines = routes

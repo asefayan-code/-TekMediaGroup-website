@@ -4,11 +4,19 @@ import ContentView from '../../components/ContentView.astro';
 import { site } from '../../data/site';
 import { services, hubs } from '../../data/services';
 import type { ContentPage } from '../../data/types';
+import { lenses } from '../../data/lenses';
 
 export function getStaticPaths() {
   return services.map((page) => ({ params: { slug: page.slug }, props: { page } }));
 }
-const { page } = Astro.props as { page: ContentPage };
+const { page: base } = Astro.props as { page: ContentPage };
+// The lens repair page also lists every lens that has its own model page.
+const norm = (n: string) => n.toLowerCase().replace(/[^a-z0-9]/g, '');
+const isLens = base.slug === 'lens-repair' && lenses.length > 0;
+const page: ContentPage = isLens
+  ? { ...base, models: [...(base.models ?? []), { group: 'Lens model pages', names: lenses.map((l) => l.name) }] }
+  : base;
+const modelHref = isLens ? Object.fromEntries(lenses.map((l) => [norm(l.name), `/services/lens-repair/${l.slug}/`])) : {};
 const related = [
   ...services.filter((s) => s.slug !== page.slug).map((s) => ({ href: `/services/${s.slug}/`, label: s.short, img: s.images?.[0], tile: s.images ? undefined : s.short })),
   ...hubs.map((h) => ({ href: h.href, label: h.short, tile: h.tile })),
@@ -19,5 +27,5 @@ const schema = [{
 }];
 ---
 <Base title={`${page.title} in Burbank, CA`} description={page.summary} schema={schema}>
-  <ContentView page={page} crumbs={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services/' }, { label: page.short }]} related={related} relatedTitle="Other services" />
+  <ContentView page={page} crumbs={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services/' }, { label: page.short }]} related={related} relatedTitle="Other services" modelHref={modelHref} />
 </Base>

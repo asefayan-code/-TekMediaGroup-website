@@ -1,0 +1,43 @@
+---
+import Base from '../../../layouts/Base.astro';
+import ContentView from '../../../components/ContentView.astro';
+import { site } from '../../../data/site';
+import { lenses, type LensPage } from '../../../data/lenses';
+import type { ContentPage } from '../../../data/types';
+
+export function getStaticPaths() {
+  return lenses.map((l) => ({ params: { model: l.slug }, props: { l } }));
+}
+const { l } = Astro.props as { l: LensPage };
+const page: ContentPage = {
+  slug: l.slug,
+  title: `${l.name} Lens Repair`,
+  short: l.short,
+  summary: l.summary,
+  intro: l.intro,
+  tags: [l.brand, l.type],
+  blocks: [
+    { heading: 'Specifications', table: { head: ['Spec', 'Detail'], rows: l.specs } },
+    { heading: 'Common problems we fix', table: { head: ['Symptom', 'Likely cause'], rows: l.problems } },
+    { heading: 'What our service includes', items: l.services },
+  ],
+};
+const related = lenses
+  .filter((x) => x.slug !== l.slug)
+  .slice(0, 8)
+  .map((x) => ({ href: `/services/lens-repair/${x.slug}/`, label: x.name }));
+const schema = [{
+  '@context': 'https://schema.org', '@type': 'Service', name: page.title, description: l.summary,
+  provider: { '@id': `${site.url}/#business` }, areaServed: 'United States',
+}];
+---
+<Base title={`${page.title} in Burbank, CA`} description={l.summary} schema={schema}>
+  <ContentView
+    page={page}
+    crumbs={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services/' }, { label: 'Lens Repair', href: '/services/lens-repair/' }, { label: l.short }]}
+    related={related}
+    relatedTitle="More lenses we service"
+  >
+    <p><a href="/services/lens-repair/">See all cinema and broadcast lens repair →</a></p>
+  </ContentView>
+</Base>

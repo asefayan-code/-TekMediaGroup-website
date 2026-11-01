@@ -84,6 +84,9 @@ services:
         source: "/Reel-To-Reel-Models/Reel-To-Reel.aspx"
         destination: "/reel-to-reel-repair/"
       - type: redirect
+        source: "/LensRepair/fujinon/XA50x9.5_BESM.aspx"
+        destination: "/services/lens-repair/fujinon-xa50x9-5-besm/"
+      - type: redirect
         source: "/LensRepair/Lens.aspx"
         destination: "/services/lens-repair/"
       - type: redirect
@@ -641,3 +644,6 @@ services:
       - type: redirect
         source: "/Reel-To-Reel-Models/*"
         destination: "/reel-to-reel-repair/"
+      - type: redirect
+        source: "/LensRepair/*"
+        destination: "/services/lens-repair/"
