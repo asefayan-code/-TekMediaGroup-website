@@ -1,0 +1,30 @@
+# Render Blueprint: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: tekmg-website
+    runtime: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist
+    pullRequestPreviewsEnabled: true
+    headers:
+      - path: /_astro/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+    routes:
+      # Old ASP.NET URLs -> new pages (keeps Google rankings and old links working)
+      - { type: redirect, source: /default.aspx, destination: / }
+      - { type: redirect, source: /Default.aspx, destination: / }
+      - { type: redirect, source: /aboutUs.aspx, destination: /about/ }
+      - { type: redirect, source: /howTo.aspx, destination: /how-to-get-service/ }
+      - { type: redirect, source: /Privacy-Policy.aspx, destination: /privacy/ }
+      - { type: redirect, source: /Terms.aspx, destination: /terms/ }
+      - { type: redirect, source: /LensRepair/Lens.aspx, destination: /services/lens-repair/ }
+      - { type: redirect, source: /Camcorder-Camera-And-Deck-Repair.aspx, destination: /services/camcorder-camera-deck-repair/ }
+      - { type: redirect, source: /Bang_and_Olufsen/Band_and_Olufsen_Service.aspx, destination: /services/bang-olufsen-service/ }
+      - { type: redirect, source: /ProjectorRepair/projector_repair.aspx, destination: /services/projector-repair/ }
+      - { type: redirect, source: /MonitorRepair/Monitor_repair.aspx, destination: /services/monitor-repair/ }
+      - { type: redirect, source: /Audio-Recievers/Hifi-Audio.aspx, destination: /services/audio-receiver-repair/ }
+      - { type: redirect, source: /Reel-To-Reel/Reel-To-Reel.aspx, destination: /services/reel-to-reel-repair/ }

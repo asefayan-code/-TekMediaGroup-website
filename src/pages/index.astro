@@ -1,0 +1,109 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+import { services } from '../data/services';
+const brands = ['Sony', 'Canon', 'Fujinon', 'ARRI', 'RED', 'Panasonic', 'JVC', 'Epson', 'Bang & Olufsen',
+  'McIntosh', 'Marantz', 'Mark Levinson', 'Luxman', 'NAD', 'Studer', 'Teac', 'Akai', 'Technics', 'Angenieux'];
+---
+<Base>
+  <section class="hero">
+    <div class="wrap">
+      <h1>{site.tagline}</h1>
+      <p class="lead">
+        Professional lenses, cameras, projectors, broadcast monitors, high-end hi-fi and vintage audio, repaired
+        by experienced engineers in Burbank. Walk in, schedule a pickup, or ship from anywhere in the U.S.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href={site.portal.newTicket}>Start a service request</a>
+        <a class="btn btn-ghost" href={site.phoneHref}>Call {site.phone}</a>
+      </div>
+      <ul class="hero-badges">
+        <li>Free estimates</li>
+        <li>{site.yearsInBusiness} years in business</li>
+        <li>Authorized B&amp;O service</li>
+        <li>Nationwide shipping</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What we repair</h2>
+        <p>Pro video, broadcast and audio gear, from current production equipment to vintage classics.</p>
+      </div>
+      <div class="grid grid-3">
+        {services.map((s) => (
+          <a class="card" href={`/services/${s.slug}/`}>
+            <h3>{s.short}</h3>
+            <p>{s.summary}</p>
+            <span class="more">Learn more →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Getting your equipment serviced</h2>
+        <p>Three ways in, one simple process.</p>
+      </div>
+      <div class="grid grid-3 steps">
+        <div class="step">
+          <h3>Open a ticket</h3>
+          <p class="muted">Start a service request online, call us, or just walk in. Estimates are free.</p>
+        </div>
+        <div class="step">
+          <h3>Get it to us</h3>
+          <p class="muted">Drop it off in Burbank, book a pickup anywhere from San Francisco to San Diego, or ship it.</p>
+        </div>
+        <div class="step">
+          <h3>Approve and track</h3>
+          <p class="muted">Approve the estimate, track progress and pay online through your customer portal.</p>
+        </div>
+      </div>
+      <p><a href="/how-to-get-service/">Full details on shipping, turnaround and payment →</a></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head" style="margin-inline:auto;text-align:center">
+        <h2>Brands we service</h2>
+      </div>
+      <ul class="brands">{brands.map((b) => <li>{b}</li>)}</ul>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="wrap two-col">
+      <div>
+        <h2>Walk-in service across Los Angeles</h2>
+        <p>Our shop is at {site.address.street} in Burbank, close to:</p>
+        <ul class="areas">{site.walkInAreas.map((a) => <li>{a}</li>)}</ul>
+        <p class="muted" style="margin-top:20px">Pickup and delivery from San Francisco to San Diego. Shipped repairs from anywhere in the U.S.</p>
+      </div>
+      <div class="side-box">
+        <h3>Visit or call</h3>
+        <p>{site.address.street}<br />{site.address.city}, {site.address.region} {site.address.postal}</p>
+        {site.hours.map((h) => <p class="small"><strong>{h.days}</strong><br />{h.time}</p>)}
+        <a class="btn btn-primary" href={site.phoneHref}>{site.phone}</a>
+        <a class="btn btn-outline" href={site.mapUrl} rel="noopener">Get directions</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <h2>Ready to get it fixed?</h2>
+          <p>Open a ticket in a couple of minutes. We'll get back to you with a free estimate.</p>
+        </div>
+        <a class="btn btn-primary" href={site.portal.newTicket}>Start a service request</a>
+      </div>
+    </div>
+  </section>
+</Base>

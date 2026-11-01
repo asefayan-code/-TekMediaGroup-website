@@ -1,0 +1,37 @@
+---
+import { site } from '../data/site';
+import { services } from '../data/services';
+const path = Astro.url.pathname;
+---
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <span>{site.hours[0].days}, {site.hours[0].time}</span>
+    <span class="topbar-links">
+      <a href={site.portal.ticketLookup}>Check ticket status</a>
+      <a href={site.portal.login}>Customer login</a>
+    </span>
+  </div>
+</div>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="/" class="brand" aria-label={`${site.name} home`}>
+      <span class="brand-mark" aria-hidden="true">TMG</span>
+      <span class="brand-text">Tek Media Group<small>Electronics Service &amp; Repair</small></span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu" />
+    <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span></label>
+    <nav class="nav" aria-label="Main">
+      <details class="nav-drop">
+        <summary class:list={[{ active: path.startsWith('/services') }]}>Services</summary>
+        <ul>
+          {services.map((s) => <li><a href={`/services/${s.slug}/`}>{s.short}</a></li>)}
+        </ul>
+      </details>
+      <a href="/how-to-get-service/" class:list={[{ active: path.startsWith('/how-to') }]}>How it works</a>
+      <a href="/about/" class:list={[{ active: path.startsWith('/about') }]}>About</a>
+      <a href="/contact/" class:list={[{ active: path.startsWith('/contact') }]}>Contact</a>
+      <a href={site.phoneHref} class="nav-phone">{site.phone}</a>
+      <a href={site.portal.newTicket} class="btn btn-primary btn-sm">Start a repair</a>
+    </nav>
+  </div>
+</header>

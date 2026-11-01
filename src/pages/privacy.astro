@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+// DRAFT — review before launch, or replace with the text from the old Privacy-Policy.aspx page.
+---
+<Base title="Privacy Policy">
+  <section class="page-hero"><div class="wrap"><h1>Privacy policy</h1></div></section>
+  <section class="section"><div class="wrap prose">
+    <p>This policy explains what information Tek Media Group collects and how we use it.</p>
+    <h2>Information we collect</h2>
+    <p>When you request service, we collect your name, contact details, shipping address and information about your equipment. Service tickets, estimates, invoices and payments are handled through our repair management system, RepairShopr.</p>
+    <h2>How we use it</h2>
+    <p>We use your information to process repairs, contact you about your service, ship equipment and take payment. We do not sell your personal information.</p>
+    <h2>Sharing</h2>
+    <p>We share information only with service providers we need to complete your repair, such as shipping carriers, payment processors and manufacturers for warranty claims.</p>
+    <h2>Contact</h2>
+    <p>Questions about this policy? Email <a href={`mailto:${site.email}`}>{site.email}</a> or call <a href={site.phoneHref}>{site.phone}</a>.</p>
+  </div></section>
+</Base>

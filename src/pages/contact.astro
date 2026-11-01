@@ -1,0 +1,38 @@
+---
+import Base from '../layouts/Base.astro';
+import { site, fullAddress } from '../data/site';
+---
+<Base title="Contact Us" description={`Contact Tek Media Group in Burbank, CA. Call ${site.phone}, email ${site.email}, or visit ${fullAddress}.`}>
+  <section class="page-hero"><div class="wrap">
+    <h1>Contact us</h1>
+    <p>Questions about a repair? Call, email or stop by the shop.</p>
+  </div></section>
+  <section class="section"><div class="wrap grid grid-3">
+    <div class="card">
+      <h3>Call</h3>
+      <p><a href={site.phoneHref}>{site.phone}</a><br />Toll free <a href={site.tollFreeHref}>{site.tollFree}</a></p>
+    </div>
+    <div class="card">
+      <h3>Email</h3>
+      <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+    </div>
+    <div class="card">
+      <h3>Visit</h3>
+      <p>{fullAddress}<br /><a href={site.mapUrl} rel="noopener">Get directions</a></p>
+    </div>
+    <div class="card">
+      <h3>Hours</h3>
+      {site.hours.map((h) => <p><strong>{h.days}</strong><br />{h.time}</p>)}
+    </div>
+    <div class="card">
+      <h3>New repair</h3>
+      <p>The fastest way to get started is to open a service ticket online.</p>
+      <a class="btn btn-primary" href={site.portal.newTicket}>Start a service request</a>
+    </div>
+    <div class="card">
+      <h3>Existing repair</h3>
+      <p>Check status, approve estimates and pay invoices in the customer portal.</p>
+      <a class="btn btn-outline" href={site.portal.login}>Customer login</a>
+    </div>
+  </div></section>
+</Base>

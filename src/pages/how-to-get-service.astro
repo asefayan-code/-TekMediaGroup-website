@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+import { site, fullAddress } from '../data/site';
+---
+<Base title="How to Get Equipment Serviced" description="How to send equipment to Tek Media Group for repair: open a ticket, walk in, book a pickup or ship it. No diagnosis fee, free estimates.">
+  <section class="page-hero"><div class="wrap">
+    <h1>How to get equipment serviced</h1>
+    <p>Free estimates, no diagnosis fee, and four easy ways to get your gear to us.</p>
+  </div></section>
+  <section class="section"><div class="wrap two-col">
+    <div class="prose">
+      <h2 style="margin-top:0">1. Open a service request</h2>
+      <p>
+        <a href={site.portal.newTicket}>Start a service ticket online</a> and choose the type of equipment. You'll
+        get a ticket number and our shipping address. You can also call us at <a href={site.phoneHref}>{site.phone}</a>
+        or toll free at <a href={site.tollFreeHref}>{site.tollFree}</a>.
+      </p>
+      <h2>2. Get your equipment to us</h2>
+      <ul class="check-list">
+        <li><strong>Walk in</strong> to our Burbank shop for a free estimate.</li>
+        <li><strong>Pickup and delivery</strong> is available from San Francisco to San Diego.</li>
+        <li><strong>On-site service</strong> can be requested for installed equipment.</li>
+        <li><strong>Ship it</strong> to us from anywhere in the U.S.</li>
+      </ul>
+      <h2>3. Shipping tips</h2>
+      <ul class="check-list">
+        <li>Remove accessories, media and memory cards before shipping.</li>
+        <li>Pack equipment securely and include your ticket number in the box.</li>
+        <li>Please insure your shipment for its full value. We are not responsible for shipping insurance.</li>
+        <li>For eligible products we can send a shipping label and box once your request is open.</li>
+      </ul>
+      <h2>4. Estimate, approval and repair</h2>
+      <p>
+        We don't charge a diagnosis fee on out-of-warranty products. After we inspect your equipment, we send an
+        estimate for you to approve before any work begins. Cost depends on the product and whether it's
+        under warranty.
+      </p>
+      <h2>Turnaround</h2>
+      <p>
+        Most repairs ship back within 3 to 12 business days of arrival, depending on your location. Parts
+        availability or shipping delays can extend this. You can check your ticket status anytime in the
+        <a href={site.portal.ticketLookup}>customer portal</a>.
+      </p>
+      <h2>Payment</h2>
+      <p>We accept {site.paymentMethods.join(', ')}. You can <a href={site.portal.pay}>pay invoices online</a> after logging in.</p>
+    </div>
+    <aside class="side-box">
+      <h3>Shop address</h3>
+      <p>{fullAddress}</p>
+      {site.hours.map((h) => <p class="small"><strong>{h.days}</strong><br />{h.time}</p>)}
+      <a class="btn btn-primary" href={site.portal.newTicket}>Start a service request</a>
+      <a class="btn btn-outline" href={site.portal.ticketLookup}>Check ticket status</a>
+    </aside>
+  </div></section>
+</Base>

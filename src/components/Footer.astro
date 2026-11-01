@@ -1,0 +1,46 @@
+---
+import { site, fullAddress } from '../data/site';
+import { services } from '../data/services';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-brand">Tek Media Group</p>
+      <p>{fullAddress}</p>
+      <p><a href={site.phoneHref}>{site.phone}</a><br />Toll free <a href={site.tollFreeHref}>{site.tollFree}</a></p>
+      <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+      <p class="social">
+        <a href={site.social.facebook} rel="noopener">Facebook</a>
+        <a href={site.social.instagram} rel="noopener">Instagram</a>
+        <a href={site.social.x} rel="noopener">X</a>
+      </p>
+    </div>
+    <div>
+      <p class="footer-head">Services</p>
+      <ul>{services.map((s) => <li><a href={`/services/${s.slug}/`}>{s.short}</a></li>)}</ul>
+    </div>
+    <div>
+      <p class="footer-head">Customers</p>
+      <ul>
+        <li><a href={site.portal.newTicket}>Start a service ticket</a></li>
+        <li><a href={site.portal.ticketLookup}>Existing ticket lookup</a></li>
+        <li><a href={site.portal.login}>Customer login</a></li>
+        <li><a href={site.portal.pay}>Pay an invoice</a></li>
+        <li><a href="/how-to-get-service/">How to get equipment serviced</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-head">Company</p>
+      <ul>
+        <li><a href="/about/">About us</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/privacy/">Privacy policy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul>
+      <p class="footer-head">Hours</p>
+      {site.hours.map((h) => <p class="small">{h.days}<br />{h.time}</p>)}
+    </div>
+  </div>
+  <div class="wrap footer-base">© {year} Tek Media Group. All rights reserved.</div>
+</footer>

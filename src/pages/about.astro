@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+---
+<Base title="About Us" description="Tek Media Group is a Burbank electronics repair company with factory-authorized technicians serving Southern California and customers nationwide.">
+  <section class="page-hero"><div class="wrap">
+    <h1>About Tek Media Group</h1>
+    <p>Electronics service and repair in Burbank for over three decades.</p>
+  </div></section>
+  <section class="section"><div class="wrap two-col">
+    <div class="prose">
+      <p>
+        Tek Media Group is an electronics service company based in Burbank, California. For {site.yearsInBusiness} years
+        our engineers have repaired the audio, video and broadcast equipment that studios, production companies,
+        businesses and home listeners rely on.
+      </p>
+      <p>
+        We work on professional box and ENG lenses, camcorders and cinema cameras, tape decks, projectors,
+        broadcast monitors, high-end and vintage hi-fi, open-reel recorders, and we are an authorized
+        Bang &amp; Olufsen service center.
+      </p>
+      <h2>Why customers choose us</h2>
+      <ul class="check-list">
+        <li>Factory-authorized technicians with decades of experience</li>
+        <li>Electronic engineers on staff</li>
+        <li>Free estimates and honest diagnostics</li>
+        <li>Fast turnaround</li>
+        <li>Trusted by home users, studios and businesses</li>
+      </ul>
+      <h2>Where we serve</h2>
+      <p>
+        Walk-in and local service across Los Angeles, Orange and Ventura counties, including Burbank, Glendale,
+        Pasadena, Hollywood, Santa Monica and Beverly Hills. Pickup and delivery from San Francisco to San Diego,
+        and shipped repairs nationwide.
+      </p>
+    </div>
+    <aside class="side-box">
+      <h3>Start a repair</h3>
+      <p class="small muted">Free estimates on every job.</p>
+      <a class="btn btn-primary" href={site.portal.newTicket}>Start a service request</a>
+      <a class="btn btn-outline" href="/contact/">Contact us</a>
+    </aside>
+  </div></section>
+</Base>

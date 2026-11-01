@@ -1,0 +1,75 @@
+---
+import Base from '../../layouts/Base.astro';
+import { site } from '../../data/site';
+import { services, type Service } from '../../data/services';
+
+export function getStaticPaths() {
+  return services.map((service) => ({ params: { slug: service.slug }, props: { service } }));
+}
+const { service } = Astro.props as { service: Service };
+const others = services.filter((s) => s.slug !== service.slug);
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.title,
+    description: service.summary,
+    provider: { '@id': `${site.url}/#business` },
+    areaServed: 'United States',
+    brand: service.brands.map((name) => ({ '@type': 'Brand', name })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+      { '@type': 'ListItem', position: 2, name: service.title, item: `${site.url}/services/${service.slug}/` },
+    ],
+  },
+];
+---
+<Base title={`${service.title} in Burbank, CA`} description={service.summary} schema={schema}>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="crumbs"><a href="/">Home</a> / Services</p>
+      <h1>{service.title}</h1>
+      <p>{service.summary}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap two-col">
+      <div>
+        <p style="font-size:1.1rem">{service.intro}</p>
+        <ul class="tags" aria-label="Brands">{service.brands.map((b) => <li>{b}</li>)}</ul>
+        {service.sections.map((sec) => (
+          <>
+            <h2>{sec.heading}</h2>
+            <ul class="check-list">{sec.items.map((i) => <li>{i}</li>)}</ul>
+          </>
+        ))}
+        <h2>How it works</h2>
+        <p>
+          Open a service ticket online, then drop your equipment off in Burbank, book a pickup, or ship it to us.
+          Estimates are free and there is no diagnosis fee. You'll approve the cost before any work begins.
+          <a href="/how-to-get-service/">See shipping and turnaround details</a>.
+        </p>
+      </div>
+      <aside class="side-box">
+        <h3>Get a free estimate</h3>
+        <p class="small muted">Open a ticket online or call us. Walk-ins welcome {site.hours[0].days}, {site.hours[0].time}.</p>
+        <a class="btn btn-primary" href={site.portal.newTicket}>Start a service request</a>
+        <a class="btn btn-outline" href={site.phoneHref}>Call {site.phone}</a>
+      </aside>
+    </div>
+  </section>
+  <section class="section section-soft">
+    <div class="wrap">
+      <h2>Other services</h2>
+      <div class="grid grid-4">
+        {others.map((s) => (
+          <a class="card" href={`/services/${s.slug}/`}><h3>{s.short}</h3><span class="more">Learn more →</span></a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
