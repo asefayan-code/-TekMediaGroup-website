@@ -1,11 +1,12 @@
 ---
 import { site } from '../data/site';
 import type { ContentPage } from '../data/types';
+import ServiceCard from './ServiceCard.astro';
 
 interface Props {
   page: ContentPage;
   crumbs: { label: string; href?: string }[];
-  related?: { href: string; label: string }[];
+  related?: { href: string; label: string; img?: { src: string; alt: string }; tile?: string }[];
   relatedTitle?: string;
 }
 const { page, crumbs, related = [], relatedTitle = 'Related' } = Astro.props;
@@ -85,7 +86,7 @@ const { page, crumbs, related = [], relatedTitle = 'Related' } = Astro.props;
     <div class="wrap">
       <h2>{relatedTitle}</h2>
       <div class="grid grid-4">
-        {related.map((r) => <a class="card" href={r.href}><h3>{r.label}</h3><span class="more">Learn more →</span></a>)}
+        {related.map((r) => r.img || r.tile ? <ServiceCard href={r.href} title={r.label} img={r.img} tile={r.tile} /> : <a class="card" href={r.href}><h3>{r.label}</h3><span class="more">Learn more →</span></a>)}
       </div>
     </div>
   </section>

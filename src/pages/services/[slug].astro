@@ -10,8 +10,8 @@ export function getStaticPaths() {
 }
 const { page } = Astro.props as { page: ContentPage };
 const related = [
-  ...services.filter((s) => s.slug !== page.slug).map((s) => ({ href: `/services/${s.slug}/`, label: s.short })),
-  ...hubs.map((h) => ({ href: h.href, label: h.short })),
+  ...services.filter((s) => s.slug !== page.slug).map((s) => ({ href: `/services/${s.slug}/`, label: s.short, img: s.images?.[0], tile: s.images ? undefined : s.short })),
+  ...hubs.map((h) => ({ href: h.href, label: h.short, tile: h.tile })),
 ];
 const schema = [{
   '@context': 'https://schema.org', '@type': 'Service', name: page.title, description: page.summary,

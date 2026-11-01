@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import ServiceCard from '../components/ServiceCard.astro';
 import { site } from '../data/site';
 import { services, hubs } from '../data/services';
 const brands = ['Sony', 'Canon', 'Fujinon', 'ARRI', 'RED', 'Panasonic', 'JVC', 'Epson', 'Bang & Olufsen',
@@ -7,7 +8,8 @@ const brands = ['Sony', 'Canon', 'Fujinon', 'ARRI', 'RED', 'Panasonic', 'JVC', '
 ---
 <Base>
   <section class="hero">
-    <div class="wrap">
+    <div class="wrap hero-grid">
+      <div>
       <h1>{site.tagline}</h1>
       <p class="lead">
         Professional lenses, cameras, projectors, broadcast monitors, high-end hi-fi and vintage audio, repaired
@@ -23,6 +25,11 @@ const brands = ['Sony', 'Canon', 'Fujinon', 'ARRI', 'RED', 'Panasonic', 'JVC', '
         <li>Authorized B&amp;O service</li>
         <li>Nationwide shipping</li>
       </ul>
+      </div>
+      <figure class="hero-photo">
+        <img src="/images/projector-repair-bench.webp" alt="Tek Media Group technician repairing a large-venue projector in our Burbank shop" width="600" height="292" />
+        <figcaption>On the bench in our Burbank shop</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -33,13 +40,8 @@ const brands = ['Sony', 'Canon', 'Fujinon', 'ARRI', 'RED', 'Panasonic', 'JVC', '
         <p>Pro video, broadcast, printing and audio gear, from current production equipment to vintage classics.</p>
       </div>
       <div class="grid grid-3">
-        {[...services.map((s) => ({ href: `/services/${s.slug}/`, short: s.short, summary: s.summary })), ...hubs].map((s) => (
-          <a class="card" href={s.href}>
-            <h3>{s.short}</h3>
-            <p>{s.summary}</p>
-            <span class="more">Learn more →</span>
-          </a>
-        ))}
+        {services.map((s) => <ServiceCard href={`/services/${s.slug}/`} title={s.short} summary={s.summary} img={s.images?.[0]} />)}
+        {hubs.map((h) => <ServiceCard href={h.href} title={h.short} summary={h.summary} tile={h.tile} />)}
       </div>
     </div>
   </section>

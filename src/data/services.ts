@@ -40,6 +40,9 @@ export const services: ContentPage[] = [
     summary: 'Broadcast ENG, PTZ, studio, cinema and SLR cameras. Sony XDCAM, XAVC, HDCAM and Cinema Line specialists.',
     intro:
       'We repair the cameras production work depends on: shoulder ENG camcorders, PTZ and studio system cameras, cinema bodies and handheld professional camcorders. Free, no-obligation estimates, with a full diagnostic before any work begins.',
+    images: [
+      { src: '/images/sony-camcorder-deck.webp', alt: 'Sony XDCAM camcorder and professional deck', caption: 'Sony XDCAM camcorder and deck' },
+    ],
     tags: ['ENG', 'PTZ', 'Studio', 'Cinema', 'SLR', 'XDCAM', 'XAVC', 'HDCAM', 'HDCAM SR'],
     models: [
       { group: 'PMW series (XDCAM EX)', names: ['PMW-EX1R', 'PMW-EX3', 'PMW-100', 'PMW-150', 'PMW-200', 'PMW-320', 'PMW-400', 'PMW-500', 'PMW-580', 'PMW-700', 'PMW-F5', 'PMW-F55', 'PMW-Z190', 'PMW-Z200', 'PMW-Z280'] },
@@ -90,6 +93,12 @@ export const services: ContentPage[] = [
     summary: 'RED DSMC2, Helium, EPIC-W, Scarlet-W, Komodo and RED One cameras, plus RED Pro Prime and Pro Zoom lenses.',
     intro:
       'Certified technicians repair, maintain and troubleshoot RED digital cinema cameras and lenses, with all repairs done in-house. Shipped-in repairs accepted from anywhere in the U.S.',
+    images: [
+      { src: '/images/red-camera-repair.webp', alt: 'RED Raven camera rig with cinema lens', caption: 'RED camera on set' },
+      { src: '/images/red-komodo-6k.webp', alt: 'RED Komodo 6K digital cinema camera', caption: 'RED Komodo 6K' },
+      { src: '/images/red-scarlet-x.webp', alt: 'RED Scarlet-X Mysterium-X camera body', caption: 'RED Scarlet-X' },
+      { src: '/images/red-one.webp', alt: 'RED One digital cinema camera', caption: 'RED One' },
+    ],
     tags: ['RED'],
     models: [
       { group: 'Cameras', names: ['RED DSMC2', 'RED DSMC2 Helium 8K S35', 'RED EPIC-W', 'RED SCARLET-W', 'RED SCARLET-X Mysterium-X', 'RED Komodo 6K', 'RED One'] },
@@ -110,6 +119,9 @@ export const services: ContentPage[] = [
     summary: 'Sony HDCAM SR, HDCAM, XDCAM Professional Disc, XAVC and Betacam decks and recorders, repaired and aligned.',
     intro:
       'Post houses, broadcasters and archives still rely on professional decks. We service tape transports, optical disc drives, SSD recorders and their I/O, timecode and sync electronics, using alignment tapes and factory documentation.',
+    images: [
+      { src: '/images/sony-camcorder-deck.webp', alt: 'Sony professional deck and XDCAM camcorder', caption: 'Sony deck and camcorder' },
+    ],
     tags: ['HDCAM SR', 'HDCAM', 'XDCAM', 'XAVC', 'Betacam', 'DVCAM', 'MPEG IMX'],
     models: [
       { group: 'SRW series (HDCAM SR)', names: ['SRW-5000', 'SRW-5100', 'SRW-5500', 'SRW-5800'] },
@@ -157,6 +169,9 @@ export const services: ContentPage[] = [
     short: 'Projectors',
     summary: 'Home theater, business and large-venue installation projectors from Sony, Epson, Panasonic, JVC and more.',
     intro: 'We repair projectors of every major brand, big and small, from home theater units to large-venue installation projectors.',
+    images: [
+      { src: '/images/projector-repair-bench.webp', alt: 'Technician repairing a large-venue projector on the Tek Media Group bench', caption: 'On our bench: large-venue projector' },
+    ],
     tags: ['Sony', 'Epson', 'Panasonic', 'JVC', 'Christie', 'NEC', 'BenQ', 'Optoma'],
     blocks: [
       {
@@ -178,6 +193,11 @@ export const services: ContentPage[] = [
     short: 'Pro Monitors',
     summary: 'Broadcast reference and production monitors from Sony, Panasonic, JVC and more.',
     intro: 'Reference monitors need to be right, not just on. We repair and calibrate broadcast and production monitors used in studios, edit bays and trucks.',
+    images: [
+      { src: '/images/monitor-lcd-panel-repair.webp', alt: 'Defective LCD panel replaced to restore a broadcast monitor, with examples of LCD faults', caption: 'LCD panel replacement and common faults' },
+      { src: '/images/sony-crt-monitor-repair.webp', alt: 'Sony broadcast CRT monitor opened up for repair', caption: 'Sony CRT broadcast monitor repair' },
+      { src: '/images/sony-monitor-ports.webp', alt: 'Close-up of SDI and BNC input ports on a Sony broadcast monitor', caption: 'SDI and BNC input repair' },
+    ],
     tags: ['Sony', 'Panasonic', 'JVC', 'Flanders Scientific', 'Ikegami'],
     blocks: [
       {
@@ -229,8 +249,8 @@ export const services: ContentPage[] = [
 ];
 
 // Hub pages for categories that have their own sections.
-export const hubs = [
-  { href: '/bang-olufsen/', short: 'Bang & Olufsen', summary: 'Authorized B&O service for Beolab, Beosound, Beogram, Beocenter, Beovision and Beocom, in and out of warranty.' },
-  { href: '/hifi-audio-repair/', short: 'Hi-Fi Receivers & Amplifiers', summary: 'McIntosh, Marantz, Luxman, Mark Levinson, NAD, Harman Kardon, Nakamichi, Scott and 30+ more brands.' },
-  { href: '/reel-to-reel-repair/', short: 'Reel-to-Reel', summary: 'Studer, Revox, Teac, Tascam, Akai, Pioneer, Nagra, Technics and other open-reel machines restored.' },
+export const hubs: { href: string; tile: string; short: string; summary: string }[] = [
+  { href: '/bang-olufsen/', tile: 'Bang & Olufsen', short: 'Bang & Olufsen', summary: 'Authorized B&O service for Beolab, Beosound, Beogram, Beocenter, Beovision and Beocom, in and out of warranty.' },
+  { href: '/hifi-audio-repair/', tile: 'Hi-Fi Audio', short: 'Hi-Fi Receivers & Amplifiers', summary: 'McIntosh, Marantz, Luxman, Mark Levinson, NAD, Harman Kardon, Nakamichi, Scott and 30+ more brands.' },
+  { href: '/reel-to-reel-repair/', tile: 'Reel-to-Reel', short: 'Reel-to-Reel', summary: 'Studer, Revox, Teac, Tascam, Akai, Pioneer, Nagra, Technics and other open-reel machines restored.' },
 ];

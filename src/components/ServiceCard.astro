@@ -1,0 +1,14 @@
+---
+interface Props { href: string; title: string; summary?: string; img?: { src: string; alt: string }; tile?: string; cta?: string }
+const { href, title, summary, img, tile, cta = 'Learn more →' } = Astro.props;
+---
+<a class="card has-media" href={href}>
+  {img
+    ? <div class="card-media"><img src={img.src} alt={img.alt} loading="lazy" width="400" height="300" /></div>
+    : <div class="card-media tile"><span>{tile ?? title}</span></div>}
+  <div class="card-body">
+    <h3>{title}</h3>
+    {summary && <p>{summary}</p>}
+    <span class="more">{cta}</span>
+  </div>
+</a>

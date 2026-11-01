@@ -1,23 +1,13 @@
 ---
 import Base from '../../layouts/Base.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
 import { services, hubs } from '../../data/services';
-const cards = [
-  ...services.map((s) => ({ href: `/services/${s.slug}/`, short: s.short, summary: s.summary, tags: s.tags ?? [] })),
-  ...hubs.map((h) => ({ ...h, tags: [] as string[] })),
-];
 ---
 <Base title="Repair Services" description="All repair services at Tek Media Group in Burbank: lenses, cameras, decks, RED, projectors, monitors, Epson printers, Bang & Olufsen, hi-fi and reel-to-reel.">
   <section class="page-hero"><div class="wrap"><h1>Repair services</h1><p>Pro video, broadcast, printing and audio equipment, repaired in Burbank.</p></div></section>
   <section class="section"><div class="wrap grid grid-3">
-    {cards.map((s) => (
-      <a class="card" href={s.href}>
-        <h3>{s.short}</h3>
-        <p>{s.summary}</p><span class="more">Learn more →</span>
-      </a>
-    ))}
-    <a class="card" href="/capacitor-replacement/">
-      <h3>Capacitor Replacement</h3>
-      <p>Why we replace the capacitors that need it, not every one on the board.</p><span class="more">Read more →</span>
-    </a>
+    {services.map((s) => <ServiceCard href={`/services/${s.slug}/`} title={s.short} summary={s.summary} img={s.images?.[0]} />)}
+    {hubs.map((h) => <ServiceCard href={h.href} title={h.short} summary={h.summary} tile={h.tile} />)}
+    <ServiceCard href="/capacitor-replacement/" title="Capacitor Replacement" summary="Why we replace the capacitors that need it, not every one on the board." tile="Capacitors" cta="Read more →" />
   </div></section>
 </Base>
