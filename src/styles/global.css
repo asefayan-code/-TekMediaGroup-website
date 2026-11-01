@@ -202,3 +202,9 @@ tr:last-child td { border-bottom: 0; }
 .hero-photo figcaption { background: rgba(0,0,0,.55); color: #e5e7eb; font-size: .82rem; padding: 8px 12px; }
 @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
 .hero h1 { max-width: none; }
+.model-links li { padding: 0; }
+.model-links a { display: block; padding: 5px 10px; color: var(--ink); text-decoration: none; }
+.model-links a:hover { color: var(--accent); }
+.model-links li.plain { padding: 5px 10px; }
+.model-links a { border-radius: 6px; }
+.model-links li:has(a) { border-color: #f0b6b9; }

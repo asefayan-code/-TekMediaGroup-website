@@ -1,0 +1,40 @@
+---
+import Base from '../../../layouts/Base.astro';
+import ContentView from '../../../components/ContentView.astro';
+import { brands, type BrandPage } from '../../../data/brands';
+import { models, type ModelPage } from '../../../data/models';
+import type { ContentPage } from '../../../data/types';
+
+export function getStaticPaths() {
+  return models.map((m) => ({
+    params: { slug: m.brand, model: m.slug },
+    props: { m, brand: brands.find((b) => b.slug === m.brand)! },
+  }));
+}
+const { m, brand } = Astro.props as { m: ModelPage; brand: BrandPage };
+const hub = brand.category === 'hifi'
+  ? { label: 'Hi-Fi Audio', href: '/hifi-audio-repair/' }
+  : { label: 'Reel-to-Reel', href: '/reel-to-reel-repair/' };
+const page: ContentPage = {
+  slug: m.slug,
+  title: `${m.name} Repair`,
+  short: m.short,
+  summary: m.summary,
+  intro: m.intro,
+  tags: [m.type, m.years].filter(Boolean),
+  blocks: [
+    ...(m.specs.length ? [{ heading: 'Specifications', table: { head: ['Spec', 'Detail'], rows: m.specs } }] : []),
+    ...(m.problems.length && m.problems.every((p) => p[1])
+      ? [{ heading: 'Common problems we fix', table: { head: ['Symptom', 'Likely cause'], rows: m.problems } }]
+      : m.problems.length ? [{ heading: 'Common problems we fix', items: m.problems.map((p) => p.filter(Boolean).join(': ')) }] : []),
+    { heading: 'What our service includes', items: m.services },
+  ],
+};
+const siblings = models.filter((x) => x.brand === m.brand && x.slug !== m.slug);
+const related = siblings.slice(0, 8).map((x) => ({ href: `/brands/${x.brand}/${x.slug}/`, label: x.name }));
+---
+<Base title={page.title} description={m.summary}>
+  <ContentView page={page} crumbs={[{ label: 'Home', href: '/' }, hub, { label: brand.short, href: `/brands/${brand.slug}/` }, { label: m.short }]} related={related} relatedTitle={`More ${brand.short} models`}>
+    <p><a href={`/brands/${brand.slug}/`}>See all {brand.short} models we service →</a></p>
+  </ContentView>
+</Base>

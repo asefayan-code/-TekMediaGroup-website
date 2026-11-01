@@ -8,8 +8,10 @@ interface Props {
   crumbs: { label: string; href?: string }[];
   related?: { href: string; label: string; img?: { src: string; alt: string }; tile?: string }[];
   relatedTitle?: string;
+  modelHref?: Record<string, string>;
 }
-const { page, crumbs, related = [], relatedTitle = 'Related' } = Astro.props;
+const { page, crumbs, related = [], relatedTitle = 'Related', modelHref = {} } = Astro.props;
+const norm = (n: string) => n.toLowerCase().replace(/[^a-z0-9]/g, '');
 ---
 <section class="page-hero">
   <div class="wrap">
@@ -40,7 +42,7 @@ const { page, crumbs, related = [], relatedTitle = 'Related' } = Astro.props;
           {page.models.map((g) => (
             <div class="model-group">
               {g.group && <h3>{g.group}</h3>}
-              <ul class="models">{g.names.map((n) => <li>{n}</li>)}</ul>
+              <ul class="models model-links">{g.names.map((n) => modelHref[norm(n)] ? <li><a href={modelHref[norm(n)]}>{n}</a></li> : <li class="plain">{n}</li>)}</ul>
             </div>
           ))}
           <p class="small muted">Don't see your model? We service many more. <a href={site.portal.newTicket}>Start a service request</a> or call us.</p>

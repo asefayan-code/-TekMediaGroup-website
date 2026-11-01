@@ -228,6 +228,354 @@ services:
         source: "/Reel-To-Reel-Models/Wilcox-Gay/Wilcox-Gay.aspx"
         destination: "/brands/wilcox-gay/"
       - type: redirect
+        source: "/Mcintosh/Mcintosh-1500.aspx"
+        destination: "/brands/mcintosh/mac-1500/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MAC1900.aspx"
+        destination: "/brands/mcintosh/mac-1900/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-1700.aspx"
+        destination: "/brands/mcintosh/mac-1900/"
+      - type: redirect
+        source: "/Mcintosh/McIntosh-MAC-4100.aspx"
+        destination: "/brands/mcintosh/mac-4100/"
+      - type: redirect
+        source: "/Mcintosh/McIntosh-MAC-4300V.aspx"
+        destination: "/brands/mcintosh/mac-4300v/"
+      - type: redirect
+        source: "/Mcintosh/McIntosh-MAC-4200.aspx"
+        destination: "/brands/mcintosh/mac-4200/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MAC4275.aspx"
+        destination: "/brands/mcintosh/mc4275/"
+      - type: redirect
+        source: "/Mcintosh/McIntosh-MAC4280.aspx"
+        destination: "/brands/mcintosh/mac-4280/"
+      - type: redirect
+        source: "/Mcintosh/McIntosh-MC402.aspx"
+        destination: "/brands/mcintosh/mc402/"
+      - type: redirect
+        source: "/Mcintosh/McIntosh-MX-117.aspx"
+        destination: "/brands/mcintosh/mx117/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MXA60.aspx"
+        destination: "/brands/mcintosh/mxa60/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MX-132.aspx"
+        destination: "/brands/mcintosh/mx132/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MR-78.aspx"
+        destination: "/brands/mcintosh/mr-78/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MX-121.aspx"
+        destination: "/brands/mcintosh/mx121/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MX-119.aspx"
+        destination: "/brands/mcintosh/mx119/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MX-120.aspx"
+        destination: "/brands/mcintosh/mx120/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MVS3.aspx"
+        destination: "/brands/mcintosh/mvs3/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MX-110.aspx"
+        destination: "/brands/mcintosh/mx110/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MX-112.aspx"
+        destination: "/brands/mcintosh/mx112/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MX-113.aspx"
+        destination: "/brands/mcintosh/mx113/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MX-114.aspx"
+        destination: "/brands/mcintosh/mx114/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MX115.aspx"
+        destination: "/brands/mcintosh/mx115/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MX-118.aspx"
+        destination: "/brands/mcintosh/mx118/"
+      - type: redirect
+        source: "/Mcintosh/McIntosh-MX-130.aspx"
+        destination: "/brands/mcintosh/mx130/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MX275.aspx"
+        destination: "/brands/mcintosh/mc275/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MC2000.aspx"
+        destination: "/brands/mcintosh/mc2000-50th-anniversary/"
+      - type: redirect
+        source: "/Marantz/Marantz-Model-19.aspx"
+        destination: "/brands/marantz/model-19/"
+      - type: redirect
+        source: "/Marantz/Marantz-Model-2230.aspx"
+        destination: "/brands/marantz/model-2230/"
+      - type: redirect
+        source: "/Marantz/Marantz-Model-2270.aspx"
+        destination: "/brands/marantz/model-2270/"
+      - type: redirect
+        source: "/Marantz/Marantz-Model-2325.aspx"
+        destination: "/brands/marantz/model-2325/"
+      - type: redirect
+        source: "/Marantz/Marantz-Model-30.aspx"
+        destination: "/brands/marantz/model-30/"
+      - type: redirect
+        source: "/Marantz/Marantz-Model-33.aspx"
+        destination: "/brands/marantz/model-33/"
+      - type: redirect
+        source: "/Marantz/Marantz-PM-10.aspx"
+        destination: "/brands/marantz/pm-10/"
+      - type: redirect
+        source: "/Marantz/Marantz-SA-7S3-SACD-Player.aspx"
+        destination: "/brands/marantz/sa-7s1/"
+      - type: redirect
+        source: "/Marantz/Marantz-SA-10-SACD-Player.aspx"
+        destination: "/brands/marantz/sa-10/"
+      - type: redirect
+        source: "/Marantz/Marantz-10b.aspx"
+        destination: "/brands/marantz/model-10b/"
+      - type: redirect
+        source: "/Marantz/Marantz-Model-2500.aspx"
+        destination: "/brands/marantz/model-2500/"
+      - type: redirect
+        source: "/Marantz/Marantz-Model-2600.aspx"
+        destination: "/brands/marantz/model-2600/"
+      - type: redirect
+        source: "/Marantz/Marantz-Model-2275.aspx"
+        destination: "/brands/marantz/model-2275/"
+      - type: redirect
+        source: "/Marantz/Marantz-2285B.aspx"
+        destination: "/brands/marantz/2285b/"
+      - type: redirect
+        source: "/Audio-Recievers/Luxman/Luxman-I509x.aspx"
+        destination: "/brands/luxman/l-509x/"
+      - type: redirect
+        source: "/Audio-Recievers/Luxman/Luxman-I50Z7.aspx"
+        destination: "/brands/luxman/l-507z/"
+      - type: redirect
+        source: "/Audio-Recievers/Luxman/Luxman-L-550AX%20II.aspx"
+        destination: "/brands/luxman/l-550ax-ii/"
+      - type: redirect
+        source: "/Audio-Recievers/Luxman/Luxman-L-550AX II.aspx"
+        destination: "/brands/luxman/l-550ax-ii/"
+      - type: redirect
+        source: "/Audio-Recievers/Luxman/Luxman-L-590AXII.aspx"
+        destination: "/brands/luxman/l-590axii/"
+      - type: redirect
+        source: "/Audio-Recievers/Luxman/Luxman-L505uXII.aspx"
+        destination: "/brands/luxman/l-505uxii/"
+      - type: redirect
+        source: "/Audio-Recievers/Mark-Levinson/Mark-Levinson-ML2.aspx"
+        destination: "/brands/mark-levinson/ml-2/"
+      - type: redirect
+        source: "/Audio-Recievers/Mark-Levinson/Mark-Levinson-ML-12.aspx"
+        destination: "/brands/mark-levinson/ml-12/"
+      - type: redirect
+        source: "/Audio-Recievers/Mark-Levinson/Mark-Levinson-ML-1.aspx"
+        destination: "/brands/mark-levinson/ml-1/"
+      - type: redirect
+        source: "/Audio-Recievers/Mark-Levinson/Mark-Levinson-No-23.5.aspx"
+        destination: "/brands/mark-levinson/no-23-5/"
+      - type: redirect
+        source: "/Audio-Recievers/Mark-Levinson/Mark-Levinson-No-26-No.28.aspx"
+        destination: "/brands/mark-levinson/no-26-no-28/"
+      - type: redirect
+        source: "/Audio-Recievers/Mark-Levinson/Mark-Levinson-No-27-No.29-Power-Amplifiers.aspx"
+        destination: "/brands/mark-levinson/no-27-no-29/"
+      - type: redirect
+        source: "/Audio-Recievers/Mark-Levinson/Mark-Levinson-No-30-No.30.5.aspx"
+        destination: "/brands/mark-levinson/no-30-no-30-5/"
+      - type: redirect
+        source: "/Audio-Recievers/Mark-Levinson/Mark-Levinson-No-32.aspx"
+        destination: "/brands/mark-levinson/no-32/"
+      - type: redirect
+        source: "/Audio-Recievers/Mark-Levinson/Mark-Levinson-No-335.aspx"
+        destination: "/brands/mark-levinson/no-335/"
+      - type: redirect
+        source: "/Audio-Recievers/Mark-Levinson/Mark-Levinson-No-436.aspx"
+        destination: "/brands/mark-levinson/no-436/"
+      - type: redirect
+        source: "/Audio-Recievers/Mark-Levinson/Mark-Levinson-No-380-380s.aspx"
+        destination: "/brands/mark-levinson/no-380-380s/"
+      - type: redirect
+        source: "/Audio-Recievers/Mark-Levinson/Mark-Levinson-No-39-37.aspx"
+        destination: "/brands/mark-levinson/no-39-no-37/"
+      - type: redirect
+        source: "/Audio-Recievers/Mark-Levinson/Mark-Levinson-No-53.aspx"
+        destination: "/brands/mark-levinson/no-53/"
+      - type: redirect
+        source: "/Audio-Recievers/Mark-Levinson/Mark-Levinson-No-331-332.aspx"
+        destination: "/brands/mark-levinson/no-331-no-332/"
+      - type: redirect
+        source: "/Audio-Recievers/Mark-Levinson/Mark-Levinson-No-326s.aspx"
+        destination: "/brands/mark-levinson/no-326s/"
+      - type: redirect
+        source: "/Audio-Recievers/Mark-Levinson/Mark-Levinson-No-432.aspx"
+        destination: "/brands/mark-levinson/no-432/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Studer/Studer-J37.aspx"
+        destination: "/brands/studer/j37/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Studer/Studer-A62.aspx"
+        destination: "/brands/studer/a62/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Studer/Studer-C37.aspx"
+        destination: "/brands/studer/c37/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Studer/Studer-A80.aspx"
+        destination: "/brands/studer/a80/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Studer/Studer-A810.aspx"
+        destination: "/brands/studer/a810/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Studer/Studer-A807.aspx"
+        destination: "/brands/studer/a807/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Studer/Studer-A820.aspx"
+        destination: "/brands/studer/a820/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Studer/Studer-A812.aspx"
+        destination: "/brands/studer/a812/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Studer/Studer-A721.aspx"
+        destination: "/brands/studer/a721-a710/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Ikai/Akai-Akai%20GX-747.aspx"
+        destination: "/brands/akai/gx-747/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Ikai/Akai-Akai GX-747.aspx"
+        destination: "/brands/akai/gx-747/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Ikai/Akai%20GX-635D.aspx"
+        destination: "/brands/akai/gx-635d/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Ikai/Akai GX-635D.aspx"
+        destination: "/brands/akai/gx-635d/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Ikai/Akai-GX-4000.aspx"
+        destination: "/brands/akai/gx-4000d/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/TEAC/TEAC-TD-102.aspx"
+        destination: "/brands/teac/td-102/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/TEAC/TEAC-A-3300SX.aspx"
+        destination: "/brands/teac/a-3300sx/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/TEAC/TEAC-A-3440.aspx"
+        destination: "/brands/teac/a-3440/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/TEAC/TEAC-A-1250.aspx"
+        destination: "/brands/teac/a-1250/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/TEAC/TEAC-A-4010SL.aspx"
+        destination: "/brands/teac/a-4010sl/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/TEAC/TEAC-A-7300.aspx"
+        destination: "/brands/teac/a-7300/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/TEAC/TEAC-X-1000R.aspx"
+        destination: "/brands/teac/x-1000r/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/TEAC/TEAC-X-2000.aspx"
+        destination: "/brands/teac/x-2000r-x-2000m/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/TASCAM/Tascam-58.aspx"
+        destination: "/brands/tascam/58/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/TASCAM/TASCAM-34.aspx"
+        destination: "/brands/tascam/34-32/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/TASCAM/TASCAM-80-8.aspx"
+        destination: "/brands/tascam/80-8/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/TASCAM/Tascam-38.aspx"
+        destination: "/brands/tascam/38/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/TASCAM/Tascam-atr-60.aspx"
+        destination: "/brands/tascam/atr-60-series/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/TASCAM/Tascam-86.aspx"
+        destination: "/brands/tascam/85-series/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Pioneer/Pioneer-RT-701.aspx"
+        destination: "/brands/pioneer/rt-701/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Pioneer/Pioneer-707.aspx"
+        destination: "/brands/pioneer/rt-707/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Pioneer/Pioneer-RT-909.aspx"
+        destination: "/brands/pioneer/rt-909/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Pioneer/Pioneer-RT-1050.aspx"
+        destination: "/brands/pioneer/rt-1050/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Pioneer/Pioneer-RT-1011.aspx"
+        destination: "/brands/pioneer/rt-1011/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Pioneer/Pioneer-RT1020.aspx"
+        destination: "/brands/pioneer/rt-1020/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Pioneer/Pioneer-RT-761.aspx"
+        destination: "/brands/pioneer/rt-761/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Pioneer/Pioneer%20RT-2022.aspx"
+        destination: "/brands/pioneer/rt-2022/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Pioneer/Pioneer RT-2022.aspx"
+        destination: "/brands/pioneer/rt-2022/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Pioneer/Pioneer-RT-2024.aspx"
+        destination: "/brands/pioneer/rt-2024/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Revox/Revox-A700.aspx"
+        destination: "/brands/revox/a700/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Revox/Revox-B77.aspx"
+        destination: "/brands/revox/b77/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Revox/Revox-A77.aspx"
+        destination: "/brands/revox/a77/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Revox/Revox-PR99.aspx"
+        destination: "/brands/revox/pr99/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Revox/Revox-G36.aspx"
+        destination: "/brands/revox/g36/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Revox/Revox-F36.aspx"
+        destination: "/brands/revox/g36/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Revox/Revox-B710.aspx"
+        destination: "/brands/revox/b710/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Revox/Revox-B760.aspx"
+        destination: "/brands/revox/b760/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Revox/Revox-B225.aspx"
+        destination: "/brands/revox/b225/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/Revox/Revox-B226.aspx"
+        destination: "/brands/revox/b226/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/NAGRA-T-Audio/Nagra-NTA2S.aspx"
+        destination: "/brands/nagra/nta-2s/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/NAGRA-T-Audio/Nagra-NTA-3TCR.aspx"
+        destination: "/brands/nagra/nta-3tcr/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/NAGRA-T-Audio/Nagra-NTA2B.aspx"
+        destination: "/brands/nagra/nta-2b/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/NAGRA-T-Audio/Nagra-NTS-3TCS.aspx"
+        destination: "/brands/nagra/nts-3tcs/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/NAGRA-T-Audio/Nagra-NTA-2M.aspx"
+        destination: "/brands/nagra/nta-2m/"
+      - type: redirect
+        source: "/Reel-To-Reel-Models/NAGRA-T-Audio/Nagra-NTA-3TCN.aspx"
+        destination: "/brands/nagra/nta-3tcn/"
+      - type: redirect
         source: "/Mcintosh/*"
         destination: "/brands/mcintosh/"
       - type: redirect

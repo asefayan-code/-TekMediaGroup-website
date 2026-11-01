@@ -4,6 +4,7 @@ import { writeFileSync } from 'node:fs';
 import { services } from '../src/data/services.ts';
 import { boPages } from '../src/data/bang-olufsen.ts';
 import { brands } from '../src/data/brands.ts';
+import { models } from '../src/data/models.ts';
 
 const routes: [string, string][] = [
   ['/default.aspx', '/'], ['/Default.aspx', '/'], ['/home', '/'],
@@ -28,7 +29,12 @@ const routes: [string, string][] = [
 for (const s of services) for (const o of s.oldPaths ?? []) routes.push([o, `/services/${s.slug}/`]);
 for (const p of boPages) for (const o of p.oldPaths ?? []) routes.push([o, `/bang-olufsen/${p.slug}/`]);
 for (const b of brands) for (const o of b.oldPaths ?? []) routes.push([o, `/brands/${b.slug}/`]);
-// Old per-model pages (e.g. /Reel-To-Reel-Models/Revox/Revox-B77.aspx) go to the brand page.
+// Old per-model pages that have a new model page go straight to it.
+for (const m of models) for (const o of m.oldPaths) {
+  routes.push([o, `/brands/${m.brand}/${m.slug}/`]);
+  if (o.includes('%20')) routes.push([decodeURIComponent(o), `/brands/${m.brand}/${m.slug}/`]);
+}
+// Any other old per-model page goes to its brand page.
 for (const b of brands) for (const pre of b.oldPrefixes ?? []) routes.push([`${pre}*`, `/brands/${b.slug}/`]);
 // Any other old B&O bulletin falls back to the B&O hub.
 routes.push(['/Bang_and_Olufsen/*', '/bang-olufsen/']);

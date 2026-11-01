@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import ContentView from '../../components/ContentView.astro';
 import { brands, type BrandPage } from '../../data/brands';
+import { models } from '../../data/models';
 
 export function getStaticPaths() {
   return brands.map((page) => ({ params: { slug: page.slug }, props: { page } }));
@@ -10,8 +11,25 @@ const { page } = Astro.props as { page: BrandPage };
 const hub = page.category === 'hifi'
   ? { label: 'Hi-Fi Audio', href: '/hifi-audio-repair/' }
   : { label: 'Reel-to-Reel', href: '/reel-to-reel-repair/' };
+const norm = (n: string) => n.toLowerCase().replace(/[^a-z0-9]/g, '');
+const brandModels = models.filter((m) => m.brand === page.slug);
+// Chip names on the brand page that differ from the model page name.
+const aliases: Record<string, string> = { mac4275: 'mc4275', mx275: 'mc275', mac1700: 'mac1900', mc2000: 'mc200050thanniversary' };
+const byShort = Object.fromEntries(brandModels.map((m) => [norm(m.short), `/brands/${m.brand}/${m.slug}/`]));
+const modelHref: Record<string, string> = { ...byShort };
+for (const [a, t] of Object.entries(aliases)) if (byShort[t]) modelHref[a] = byShort[t];
+const chipNames = new Set((page.models ?? []).flatMap((g) => g.names.map(norm)));
+const guides = brandModels.filter((m) => ![...chipNames].some((c) => modelHref[c] === `/brands/${m.brand}/${m.slug}/`));
 const related = brands.filter((b) => b.category === page.category && b.slug !== page.slug).map((b) => ({ href: `/brands/${b.slug}/`, label: b.short }));
 ---
 <Base title={page.title} description={page.summary}>
-  <ContentView page={page} crumbs={[{ label: 'Home', href: '/' }, hub, { label: page.short }]} related={related} relatedTitle={`Other ${hub.label.toLowerCase()} brands`} />
+  <ContentView page={page} crumbs={[{ label: 'Home', href: '/' }, hub, { label: page.short }]} related={related} relatedTitle={`Other ${hub.label.toLowerCase()} brands`} modelHref={modelHref}>
+    {guides.length > 0 && (
+      <Fragment slot="before-blocks">
+        <h2>More {page.short} model pages</h2>
+        <p class="small muted">Common problems, specs and what our service covers for each model.</p>
+        <ul class="models model-links">{guides.map((g) => <li><a href={`/brands/${g.brand}/${g.slug}/`}>{g.short}</a></li>)}</ul>
+      </Fragment>
+    )}
+  </ContentView>
 </Base>
