@@ -228,84 +228,6 @@ services:
         source: "/Reel-To-Reel-Models/Wilcox-Gay/Wilcox-Gay.aspx"
         destination: "/brands/wilcox-gay/"
       - type: redirect
-        source: "/Mcintosh/Mcintosh-1500.aspx"
-        destination: "/brands/mcintosh/mac-1500/"
-      - type: redirect
-        source: "/Mcintosh/Mcintosh-MAC1900.aspx"
-        destination: "/brands/mcintosh/mac-1900/"
-      - type: redirect
-        source: "/Mcintosh/Mcintosh-1700.aspx"
-        destination: "/brands/mcintosh/mac-1900/"
-      - type: redirect
-        source: "/Mcintosh/McIntosh-MAC-4100.aspx"
-        destination: "/brands/mcintosh/mac-4100/"
-      - type: redirect
-        source: "/Mcintosh/McIntosh-MAC-4300V.aspx"
-        destination: "/brands/mcintosh/mac-4300v/"
-      - type: redirect
-        source: "/Mcintosh/McIntosh-MAC-4200.aspx"
-        destination: "/brands/mcintosh/mac-4200/"
-      - type: redirect
-        source: "/Mcintosh/Mcintosh-MAC4275.aspx"
-        destination: "/brands/mcintosh/mc4275/"
-      - type: redirect
-        source: "/Mcintosh/McIntosh-MAC4280.aspx"
-        destination: "/brands/mcintosh/mac-4280/"
-      - type: redirect
-        source: "/Mcintosh/McIntosh-MC402.aspx"
-        destination: "/brands/mcintosh/mc402/"
-      - type: redirect
-        source: "/Mcintosh/McIntosh-MX-117.aspx"
-        destination: "/brands/mcintosh/mx117/"
-      - type: redirect
-        source: "/Mcintosh/Mcintosh-MXA60.aspx"
-        destination: "/brands/mcintosh/mxa60/"
-      - type: redirect
-        source: "/Mcintosh/Mcintosh-MX-132.aspx"
-        destination: "/brands/mcintosh/mx132/"
-      - type: redirect
-        source: "/Mcintosh/Mcintosh-MR-78.aspx"
-        destination: "/brands/mcintosh/mr-78/"
-      - type: redirect
-        source: "/Mcintosh/Mcintosh-MX-121.aspx"
-        destination: "/brands/mcintosh/mx121/"
-      - type: redirect
-        source: "/Mcintosh/Mcintosh-MX-119.aspx"
-        destination: "/brands/mcintosh/mx119/"
-      - type: redirect
-        source: "/Mcintosh/Mcintosh-MX-120.aspx"
-        destination: "/brands/mcintosh/mx120/"
-      - type: redirect
-        source: "/Mcintosh/Mcintosh-MVS3.aspx"
-        destination: "/brands/mcintosh/mvs3/"
-      - type: redirect
-        source: "/Mcintosh/Mcintosh-MX-110.aspx"
-        destination: "/brands/mcintosh/mx110/"
-      - type: redirect
-        source: "/Mcintosh/Mcintosh-MX-112.aspx"
-        destination: "/brands/mcintosh/mx112/"
-      - type: redirect
-        source: "/Mcintosh/Mcintosh-MX-113.aspx"
-        destination: "/brands/mcintosh/mx113/"
-      - type: redirect
-        source: "/Mcintosh/Mcintosh-MX-114.aspx"
-        destination: "/brands/mcintosh/mx114/"
-      - type: redirect
-        source: "/Mcintosh/Mcintosh-MX115.aspx"
-        destination: "/brands/mcintosh/mx115/"
-      - type: redirect
-        source: "/Mcintosh/Mcintosh-MX-118.aspx"
-        destination: "/brands/mcintosh/mx118/"
-      - type: redirect
-        source: "/Mcintosh/McIntosh-MX-130.aspx"
-        destination: "/brands/mcintosh/mx130/"
-      - type: redirect
-        source: "/Mcintosh/Mcintosh-MX275.aspx"
-        destination: "/brands/mcintosh/mc275/"
-      - type: redirect
-        source: "/Mcintosh/Mcintosh-MC2000.aspx"
-        destination: "/brands/mcintosh/mc2000-50th-anniversary/"
-      - type: redirect
         source: "/Marantz/Marantz-Model-19.aspx"
         destination: "/brands/marantz/model-19/"
       - type: redirect
@@ -397,7 +319,7 @@ services:
         destination: "/brands/mark-levinson/no-436/"
       - type: redirect
         source: "/Audio-Recievers/Mark-Levinson/Mark-Levinson-No-380-380s.aspx"
-        destination: "/brands/mark-levinson/no-380-380s/"
+        destination: "/brands/mark-levinson/no-380-no-380s/"
       - type: redirect
         source: "/Audio-Recievers/Mark-Levinson/Mark-Levinson-No-39-37.aspx"
         destination: "/brands/mark-levinson/no-39-no-37/"
@@ -413,6 +335,84 @@ services:
       - type: redirect
         source: "/Audio-Recievers/Mark-Levinson/Mark-Levinson-No-432.aspx"
         destination: "/brands/mark-levinson/no-432/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-1500.aspx"
+        destination: "/brands/mcintosh/mac-1500/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MAC1900.aspx"
+        destination: "/brands/mcintosh/mac-1900/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-1700.aspx"
+        destination: "/brands/mcintosh/mac-1900/"
+      - type: redirect
+        source: "/Mcintosh/McIntosh-MAC-4100.aspx"
+        destination: "/brands/mcintosh/mac-4100/"
+      - type: redirect
+        source: "/Mcintosh/McIntosh-MAC-4300V.aspx"
+        destination: "/brands/mcintosh/mac-4300v/"
+      - type: redirect
+        source: "/Mcintosh/McIntosh-MAC-4200.aspx"
+        destination: "/brands/mcintosh/mac-4200/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MAC4275.aspx"
+        destination: "/brands/mcintosh/mac-4275/"
+      - type: redirect
+        source: "/Mcintosh/McIntosh-MAC4280.aspx"
+        destination: "/brands/mcintosh/mac-4280/"
+      - type: redirect
+        source: "/Mcintosh/McIntosh-MC402.aspx"
+        destination: "/brands/mcintosh/mc402/"
+      - type: redirect
+        source: "/Mcintosh/McIntosh-MX-117.aspx"
+        destination: "/brands/mcintosh/mx117/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MXA60.aspx"
+        destination: "/brands/mcintosh/mxa60/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MX-132.aspx"
+        destination: "/brands/mcintosh/mx132/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MR-78.aspx"
+        destination: "/brands/mcintosh/mr-78/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MX-121.aspx"
+        destination: "/brands/mcintosh/mx121/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MX-119.aspx"
+        destination: "/brands/mcintosh/mx119/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MX-120.aspx"
+        destination: "/brands/mcintosh/mx120/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MVS3.aspx"
+        destination: "/brands/mcintosh/mvs3/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MX-110.aspx"
+        destination: "/brands/mcintosh/mx110/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MX-112.aspx"
+        destination: "/brands/mcintosh/mx112/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MX-113.aspx"
+        destination: "/brands/mcintosh/mx113/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MX-114.aspx"
+        destination: "/brands/mcintosh/mx114/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MX115.aspx"
+        destination: "/brands/mcintosh/mx115/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MX-118.aspx"
+        destination: "/brands/mcintosh/mx118/"
+      - type: redirect
+        source: "/Mcintosh/McIntosh-MX-130.aspx"
+        destination: "/brands/mcintosh/mx130/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MX275.aspx"
+        destination: "/brands/mcintosh/mc275/"
+      - type: redirect
+        source: "/Mcintosh/Mcintosh-MC2000.aspx"
+        destination: "/brands/mcintosh/mc2000/"
       - type: redirect
         source: "/Reel-To-Reel-Models/Studer/Studer-J37.aspx"
         destination: "/brands/studer/j37/"
@@ -496,7 +496,7 @@ services:
         destination: "/brands/tascam/atr-60-series/"
       - type: redirect
         source: "/Reel-To-Reel-Models/TASCAM/Tascam-86.aspx"
-        destination: "/brands/tascam/85-series/"
+        destination: "/brands/tascam/85-16-series/"
       - type: redirect
         source: "/Reel-To-Reel-Models/Pioneer/Pioneer-RT-701.aspx"
         destination: "/brands/pioneer/rt-701/"
@@ -559,22 +559,22 @@ services:
         destination: "/brands/revox/b226/"
       - type: redirect
         source: "/Reel-To-Reel-Models/NAGRA-T-Audio/Nagra-NTA2S.aspx"
-        destination: "/brands/nagra/nta-2s/"
+        destination: "/brands/nagra/t-audio-nta-2s/"
       - type: redirect
         source: "/Reel-To-Reel-Models/NAGRA-T-Audio/Nagra-NTA-3TCR.aspx"
-        destination: "/brands/nagra/nta-3tcr/"
+        destination: "/brands/nagra/t-audio-nta-3tcr/"
       - type: redirect
         source: "/Reel-To-Reel-Models/NAGRA-T-Audio/Nagra-NTA2B.aspx"
-        destination: "/brands/nagra/nta-2b/"
+        destination: "/brands/nagra/t-audio-nta-2b/"
       - type: redirect
         source: "/Reel-To-Reel-Models/NAGRA-T-Audio/Nagra-NTS-3TCS.aspx"
-        destination: "/brands/nagra/nts-3tcs/"
+        destination: "/brands/nagra/t-audio-nts-3tcs/"
       - type: redirect
         source: "/Reel-To-Reel-Models/NAGRA-T-Audio/Nagra-NTA-2M.aspx"
-        destination: "/brands/nagra/nta-2m/"
+        destination: "/brands/nagra/t-audio-nta-2m/"
       - type: redirect
         source: "/Reel-To-Reel-Models/NAGRA-T-Audio/Nagra-NTA-3TCN.aspx"
-        destination: "/brands/nagra/nta-3tcn/"
+        destination: "/brands/nagra/t-audio-nta-3tcn/"
       - type: redirect
         source: "/Mcintosh/*"
         destination: "/brands/mcintosh/"

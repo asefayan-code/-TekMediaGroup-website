@@ -35,8 +35,8 @@ export const brands: BrandPage[] = [
     intro: 'McIntosh gear is built to last decades, and with the right service it will. We do board-level repair, power supply overhauls and full restorations.',
     models: [
       { group: 'Receivers', names: ['MAC 1500', 'MAC 1700', 'MAC 1900', 'MAC 4100', 'MAC 4200', 'MAC 4275', 'MAC 4280', 'MAC 4300V'] },
-      { group: 'Preamps and preamp/tuners', names: ['MX110', 'MX112', 'MX113', 'MX114', 'MX115', 'MX117', 'MX118', 'MX119', 'MX120', 'MX121', 'MX130', 'MX132', 'MX275'] },
-      { group: 'Tuners, amplifiers and more', names: ['MR78', 'MC402', 'MC2000', 'MXA60', 'MVS3'] },
+      { group: 'Preamps and preamp/tuners', names: ['MX110', 'MX112', 'MX113', 'MX114', 'MX115', 'MX117', 'MX118', 'MX119', 'MX120', 'MX121', 'MX130', 'MX132'] },
+      { group: 'Tuners, amplifiers and more', names: ['MR 78', 'MC275', 'MC402', 'MC2000', 'MXA60', 'MVS3'] },
     ],
     blocks: [
       { heading: 'Common problems', items: ['Power supply faults and ripple', 'Aged or failing capacitors', 'Board-level component failures', 'Overheating', 'Hum from internal ground issues', 'Clipping or asymmetrical distortion', 'Calibration drift'] },
@@ -51,7 +51,7 @@ export const brands: BrandPage[] = [
     models: [
       { group: 'Vintage receivers and tuners', names: ['Model 19', 'Model 2230', 'Model 2270', 'Model 2275', 'Model 2285B', 'Model 2325', 'Model 2500', 'Model 2600', 'Model 10B'] },
       { group: 'Integrated amplifiers', names: ['Model 30', 'Model 33', 'PM-10'] },
-      { group: 'SACD / CD players', names: ['SA-7S3', 'SA-10', 'CD-94', 'CD-95', 'CD-99'] },
+      { group: 'SACD / CD players', names: ['SA-7S1', 'SA-10', 'CD-94', 'CD-95', 'CD-99'] },
     ],
     blocks: [
       { heading: 'Common problems', items: ['Noisy selector switches', 'Drifting FM', 'Aging power supply capacitors', 'Intermittent output relay', 'Scratchy volume controls', 'Dead dial lamps', 'Overheating and protection mode', 'Skipping discs and read errors'] },

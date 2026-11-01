@@ -42,6 +42,7 @@ npm run build    # outputs to dist/
 - Services: `src/data/services.ts` (pages under `/services/`)
 - Bang & Olufsen: `src/data/bang-olufsen.ts` (pages under `/bang-olufsen/`)
 - Hi-fi and reel-to-reel brands: `src/data/brands.ts` (pages under `/brands/`)
+- Brand model pages: `scripts/models/data_*.py`, then run `python3 scripts/models/build.py` to regenerate `src/data/models.ts`
 - Photos and logo: `public/images/`
 
 After adding or renaming pages, regenerate the old-URL redirects with `node scripts/gen-render-yaml.ts`.

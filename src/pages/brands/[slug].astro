@@ -14,7 +14,7 @@ const hub = page.category === 'hifi'
 const norm = (n: string) => n.toLowerCase().replace(/[^a-z0-9]/g, '');
 const brandModels = models.filter((m) => m.brand === page.slug);
 // Chip names on the brand page that differ from the model page name.
-const aliases: Record<string, string> = { mac4275: 'mc4275', mx275: 'mc275', mac1700: 'mac1900', mc2000: 'mc200050thanniversary' };
+const aliases: Record<string, string> = { mac1700: 'mac1900', sa7s3: 'sa7s1' };
 const byShort = Object.fromEntries(brandModels.map((m) => [norm(m.short), `/brands/${m.brand}/${m.slug}/`]));
 const modelHref: Record<string, string> = { ...byShort };
 for (const [a, t] of Object.entries(aliases)) if (byShort[t]) modelHref[a] = byShort[t];
