@@ -1,0 +1,92 @@
+---
+import { site } from '../data/site';
+import type { ContentPage } from '../data/types';
+
+interface Props {
+  page: ContentPage;
+  crumbs: { label: string; href?: string }[];
+  related?: { href: string; label: string }[];
+  relatedTitle?: string;
+}
+const { page, crumbs, related = [], relatedTitle = 'Related' } = Astro.props;
+---
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumbs">
+      {crumbs.map((c, i) => (
+        <>{i > 0 && ' / '}{c.href ? <a href={c.href}>{c.label}</a> : c.label}</>
+      ))}
+    </p>
+    <h1>{page.title}</h1>
+    <p>{page.summary}</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap two-col">
+    <div>
+      <p class="lede">{page.intro}</p>
+      {page.images && (
+        <div class="gallery">
+          {page.images.map((im) => (
+            <figure><img src={im.src} alt={im.alt} width="500" height="500" loading="lazy" />{im.caption && <figcaption>{im.caption}</figcaption>}</figure>
+          ))}
+        </div>
+      )}
+      {page.tags && <ul class="tags" aria-label="Brands and formats">{page.tags.map((t) => <li>{t}</li>)}</ul>}
+      {page.models && page.models.length > 0 && (
+        <>
+          <h2>Models we service</h2>
+          {page.models.map((g) => (
+            <div class="model-group">
+              {g.group && <h3>{g.group}</h3>}
+              <ul class="models">{g.names.map((n) => <li>{n}</li>)}</ul>
+            </div>
+          ))}
+          <p class="small muted">Don't see your model? We service many more. <a href={site.portal.newTicket}>Start a service request</a> or call us.</p>
+        </>
+      )}
+      <slot name="before-blocks" />
+      {page.blocks?.map((b) => (
+        <>
+          <h2>{b.heading}</h2>
+          {b.text && <p>{b.text}</p>}
+          {b.items && <ul class="check-list">{b.items.map((i) => <li>{i}</li>)}</ul>}
+          {b.table && (
+            <div class="table-wrap">
+              <table>
+                <thead><tr>{b.table.head.map((h) => <th>{h}</th>)}</tr></thead>
+                <tbody>{b.table.rows.map((r) => <tr>{r.map((c) => <td>{c}</td>)}</tr>)}</tbody>
+              </table>
+            </div>
+          )}
+        </>
+      ))}
+      <slot />
+      {page.turnaround && (<><h2>Turnaround</h2><p>{page.turnaround}</p></>)}
+      {page.note && <p class="notice">{page.note}</p>}
+      <h2>How it works</h2>
+      <p>
+        Open a service ticket online, then drop your equipment off in Burbank, book a pickup, or ship it to us.
+        Estimates are free and you approve the cost before any work begins.
+        <a href="/how-to-get-service/">See shipping and turnaround details</a>.
+      </p>
+    </div>
+    <aside class="side-box">
+      <h3>Get a free estimate</h3>
+      <p class="small muted">Open a ticket online, call or text us. Walk-ins welcome {site.hours[0].days}, {site.hours[0].time}.</p>
+      <a class="btn btn-primary" href={site.portal.newTicket}>Start a service request</a>
+      <a class="btn btn-outline" href={site.phoneHref}>Call {site.phone}</a>
+      <a class="btn btn-outline" href={site.textHref}>Text {site.textLine}</a>
+    </aside>
+  </div>
+</section>
+{related.length > 0 && (
+  <section class="section section-soft">
+    <div class="wrap">
+      <h2>{relatedTitle}</h2>
+      <div class="grid grid-4">
+        {related.map((r) => <a class="card" href={r.href}><h3>{r.label}</h3><span class="more">Learn more →</span></a>)}
+      </div>
+    </div>
+  </section>
+)}

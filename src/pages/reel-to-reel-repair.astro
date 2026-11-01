@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+import BrandHub from '../components/BrandHub.astro';
+import { reelBrands, reelOtherBrands, reelServices } from '../data/brands';
+const summary = 'Studer, Revox, TEAC, TASCAM, Akai, Pioneer, Nagra, Technics and 30+ more open-reel brands, repaired and restored since 1991.';
+---
+<Base title="Reel-to-Reel Tape Deck Repair & Restoration in Burbank, CA" description={summary}>
+  <BrandHub crumb="Reel-to-Reel" title="Reel-to-Reel Repair & Restoration" summary={summary}
+    intro="Open-reel machines are mechanical as much as electronic. We service transports, motors, heads and electronics to bring vintage recorders back to spec."
+    brands={reelBrands} others={reelOtherBrands} services={reelServices} />
+</Base>

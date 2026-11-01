@@ -1,0 +1,15 @@
+---
+import Base from '../../layouts/Base.astro';
+import ContentView from '../../components/ContentView.astro';
+import { boPages } from '../../data/bang-olufsen';
+import type { ContentPage } from '../../data/types';
+
+export function getStaticPaths() {
+  return boPages.map((page) => ({ params: { slug: page.slug }, props: { page } }));
+}
+const { page } = Astro.props as { page: ContentPage };
+const related = boPages.filter((p) => p.slug !== page.slug).map((p) => ({ href: `/bang-olufsen/${p.slug}/`, label: p.short }));
+---
+<Base title={page.title} description={page.summary}>
+  <ContentView page={page} crumbs={[{ label: 'Home', href: '/' }, { label: 'Bang & Olufsen', href: '/bang-olufsen/' }, { label: page.short }]} related={related} relatedTitle="Other Bang & Olufsen service" />
+</Base>

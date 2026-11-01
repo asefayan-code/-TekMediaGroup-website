@@ -1,0 +1,100 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+const desc = 'Why Tek Media Group replaces the capacitors that need it instead of recapping every board: risks, benefits and our approach by equipment type.';
+const boardRisk = [
+  ['1960s–70s phenolic', 'Extreme', 'Lifted traces, loose pads, delamination'],
+  ['1970s–80s single-sided FR4', 'High', 'Broken plated holes, flex-cracked joints'],
+  ['1980s–90s double-sided FR4', 'Moderate', 'Heat damage to nearby semiconductors'],
+  ['1990s+ lead-free', 'Moderate', 'Higher heat needed, more via stress'],
+  ['Multi-layer (any era)', 'Very high', 'Internal plated-hole damage, often unrepairable'],
+];
+const approach = [
+  ['Vintage tube gear (high voltage)', 'Replace all electrolytic and paper capacitors for safety'],
+  ['Solid-state gear over 30 years old', 'Replace main power-supply capacitors; signal path only if sound is degraded'],
+  ['Working, good-sounding units', 'Replace only failed or suspicious parts'],
+  ['High-value collectibles (Marantz, McIntosh, B&O)', 'Partial recap with high-grade audio parts'],
+  ['Budget or daily-driver units', 'Replace only visibly leaking or bulging parts'],
+];
+---
+<Base title="Capacitor Replacement: Pros and Cons" description={desc}>
+  <section class="page-hero"><div class="wrap">
+    <p class="crumbs"><a href="/">Home</a> / Capacitor replacement</p>
+    <h1>Capacitor replacement: the logic behind our approach</h1>
+    <p>Why we replace the capacitors that need it, instead of every capacitor on the board.</p>
+  </div></section>
+  <section class="section"><div class="wrap prose">
+    <p>
+      After three decades at the bench, we've seen what full "recaps" do to vintage equipment, good and bad. This page
+      explains how we decide which capacitors to replace. It's an account of our experience, not a how-to guide.
+    </p>
+
+    <h2>Targeted replacement vs. full recap</h2>
+    <p>We replace capacitors that are failing, out of spec or suspicious, and leave healthy parts alone.</p>
+    <ul class="check-list">
+      <li><strong>Lower cost.</strong> A full recap can cost two to three times more in parts and labor.</li>
+      <li><strong>Less board stress.</strong> Every joint we heat is a chance to lift a trace or damage a via.</li>
+      <li><strong>Original sound preserved.</strong> Swapping every part can change the character of vintage gear.</li>
+      <li><strong>Reliability where it matters.</strong> Modern 105°C low-ESR parts go in critical power-supply positions.</li>
+    </ul>
+
+    <h2>Why "replace them all" isn't always better</h2>
+    <ul class="check-list">
+      <li><strong>The domino effect is mostly a myth.</strong> A capacitor usually fails from local heat or a bad batch, not because its neighbors are failing.</li>
+      <li><strong>Thermal stress.</strong> Heating each pad risks lifted traces, damaged vias and delamination.</li>
+      <li><strong>The bathtub curve.</strong> Parts that have survived for years are stable. New parts bring back early-life failure risk.</li>
+      <li><strong>Impedance matters.</strong> In switch-mode supplies, generic replacements can cause instability, ripple or noise.</li>
+      <li><strong>Old stock.</strong> Capacitors stored for years may need reforming before use.</li>
+      <li><strong>Film, ceramic and mica capacitors</strong> rarely fail, so replacing them adds risk for little gain.</li>
+    </ul>
+
+    <h2>Our approach by equipment type</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Equipment</th><th>What we do</th></tr></thead>
+      <tbody>{approach.map((r) => <tr><td>{r[0]}</td><td>{r[1]}</td></tr>)}</tbody>
+    </table></div>
+
+    <h2>Board risk by era</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Board type</th><th>Risk</th><th>Main danger</th></tr></thead>
+      <tbody>{boardRisk.map((r) => <tr><td>{r[0]}</td><td>{r[1]}</td><td>{r[2]}</td></tr>)}</tbody>
+    </table></div>
+
+    <h2>Risks we see from recapping</h2>
+    <ul class="check-list">
+      <li>Lifted or broken traces, especially on 1960s–70s phenolic boards</li>
+      <li>Damaged plated-through holes causing intermittent faults</li>
+      <li>Heat damage to nearby transistors and diodes that shows up days later</li>
+      <li>Brittle wiring and snapped connector tabs</li>
+      <li>Static damage to sensitive chips in tuner and remote circuits</li>
+      <li>A brighter, harsher sound from low-ESR parts in the signal path</li>
+      <li>Hidden faults unmasked, such as oscillation or noisy transistors</li>
+    </ul>
+
+    <h2>Beware of cheap parts and kits</h2>
+    <p>
+      We regularly see counterfeit or relabeled capacitors, degraded "new old stock", kits with wrong values or voltage
+      ratings, and dangerous substitutions, such as a polarized capacitor fitted where a bipolar one belongs. We buy
+      from trusted suppliers and test every part before it goes in: capacitance within ±10% and ESR no more than 20%
+      above the datasheet value.
+    </p>
+
+    <h2>Our parts and practices</h2>
+    <ul class="check-list">
+      <li>Low-ESR, 105°C electrolytics from Nichicon, Panasonic, Elna and Vishay</li>
+      <li>Film capacitors for coupling positions</li>
+      <li>Polarity verified against the schematic, because silkscreens can be wrong</li>
+      <li>First power-up on a dim-bulb tester or variac</li>
+    </ul>
+
+    <h2>When a repair isn't worth it</h2>
+    <p>
+      If a unit is worth less than about $200 and needs more than ten capacitors, the repair usually isn't economical.
+      We'll tell you honestly, and suggest whether it's better as a parts donor or sold as-is.
+    </p>
+
+    <p class="notice">Our rule is simple: do no harm to the patient. A working original board is worth more than a damaged "recapped" one.</p>
+
+    <p><a class="btn btn-primary" href={site.portal.newTicket}>Start a service request</a></p>
+  </div></section>
+</Base>

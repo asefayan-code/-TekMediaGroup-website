@@ -1,9 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
 import { site } from '../data/site';
-import { services } from '../data/services';
+import { services, hubs } from '../data/services';
 const brands = ['Sony', 'Canon', 'Fujinon', 'ARRI', 'RED', 'Panasonic', 'JVC', 'Epson', 'Bang & Olufsen',
-  'McIntosh', 'Marantz', 'Mark Levinson', 'Luxman', 'NAD', 'Studer', 'Teac', 'Akai', 'Technics', 'Angenieux'];
+  'McIntosh', 'Marantz', 'Mark Levinson', 'Luxman', 'NAD', 'Studer', 'Revox', 'TEAC', 'TASCAM', 'Akai', 'Nakamichi', 'Technics', 'Angénieux', 'Zeiss', 'Cooke'];
 ---
 <Base>
   <section class="hero">
@@ -30,11 +30,11 @@ const brands = ['Sony', 'Canon', 'Fujinon', 'ARRI', 'RED', 'Panasonic', 'JVC', '
     <div class="wrap">
       <div class="section-head">
         <h2>What we repair</h2>
-        <p>Pro video, broadcast and audio gear, from current production equipment to vintage classics.</p>
+        <p>Pro video, broadcast, printing and audio gear, from current production equipment to vintage classics.</p>
       </div>
       <div class="grid grid-3">
-        {services.map((s) => (
-          <a class="card" href={`/services/${s.slug}/`}>
+        {[...services.map((s) => ({ href: `/services/${s.slug}/`, short: s.short, summary: s.summary })), ...hubs].map((s) => (
+          <a class="card" href={s.href}>
             <h3>{s.short}</h3>
             <p>{s.summary}</p>
             <span class="more">Learn more →</span>

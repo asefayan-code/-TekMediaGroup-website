@@ -36,3 +36,12 @@ npm run build    # outputs to dist/
 - **Any advertising pixel or tag added later must not load when `navigator.globalPrivacyControl` is true**, because the privacy policy promises to honor GPC.
 - Customers who opt out by email or phone must be removed from any customer lists uploaded to advertising platforms.
 - Policies are drafts written without a lawyer; have them reviewed before relying on them.
+
+## Content and redirects
+
+- Services: `src/data/services.ts` (pages under `/services/`)
+- Bang & Olufsen: `src/data/bang-olufsen.ts` (pages under `/bang-olufsen/`)
+- Hi-fi and reel-to-reel brands: `src/data/brands.ts` (pages under `/brands/`)
+- Photos and logo: `public/images/`
+
+After adding or renaming pages, regenerate the old-URL redirects with `node scripts/gen-render-yaml.ts`.

@@ -11,6 +11,8 @@ export const site = {
   phoneHref: 'tel:+18182444440',
   tollFree: '(800) 255-5045',
   tollFreeHref: 'tel:+18002555045',
+  textLine: '(818) 726-7227',
+  textHref: 'sms:+18187267227',
   email: 'as@tekmg.com',
   address: {
     street: '711 South Victory Blvd',
@@ -29,6 +31,7 @@ export const site = {
     facebook: 'https://www.facebook.com/pages/TEK-Media-Group/397040323684276',
     instagram: 'https://www.instagram.com/tekmediagroup',
     x: 'https://x.com/tekmediagroup',
+    youtube: 'https://www.youtube.com/@tekmediagroup',
   },
   // RepairShopr customer portal — tickets, invoices, payments stay there.
   portal: {

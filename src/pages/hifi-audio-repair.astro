@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+import BrandHub from '../components/BrandHub.astro';
+import { hifiBrands, hifiOtherBrands, hifiServices } from '../data/brands';
+const summary = 'Receivers, amplifiers, preamps, tuners and CD players from McIntosh, Marantz, Luxman, Mark Levinson and 30+ more brands.';
+---
+<Base title="Hi-Fi Audio Receiver & Amplifier Repair in Burbank, CA" description={summary}>
+  <BrandHub crumb="Hi-Fi Audio" title="Hi-Fi Audio Receiver & Amplifier Repair" summary={summary}
+    intro="Classic and modern hi-fi deserves careful work. We repair and restore receivers, amplifiers, preamps and tuners so they sound the way they were designed to."
+    brands={hifiBrands} others={hifiOtherBrands} services={hifiServices} />
+</Base>

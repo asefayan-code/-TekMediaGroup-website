@@ -1,0 +1,17 @@
+---
+import Base from '../../layouts/Base.astro';
+import ContentView from '../../components/ContentView.astro';
+import { brands, type BrandPage } from '../../data/brands';
+
+export function getStaticPaths() {
+  return brands.map((page) => ({ params: { slug: page.slug }, props: { page } }));
+}
+const { page } = Astro.props as { page: BrandPage };
+const hub = page.category === 'hifi'
+  ? { label: 'Hi-Fi Audio', href: '/hifi-audio-repair/' }
+  : { label: 'Reel-to-Reel', href: '/reel-to-reel-repair/' };
+const related = brands.filter((b) => b.category === page.category && b.slug !== page.slug).map((b) => ({ href: `/brands/${b.slug}/`, label: b.short }));
+---
+<Base title={page.title} description={page.summary}>
+  <ContentView page={page} crumbs={[{ label: 'Home', href: '/' }, hub, { label: page.short }]} related={related} relatedTitle={`Other ${hub.label.toLowerCase()} brands`} />
+</Base>

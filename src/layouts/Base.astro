@@ -19,6 +19,8 @@ const localBusiness = {
   '@id': `${site.url}/#business`,
   name: site.name,
   url: site.url,
+  logo: `${site.url}/images/logo-480.png`,
+  image: `${site.url}/images/og-image.jpg`,
   telephone: '+1-818-244-4440',
   email: site.email,
   description: site.description,
@@ -53,14 +55,16 @@ const localBusiness = {
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta property="og:image" content={`${site.url}/images/og-image.jpg`} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta name="twitter:card" content="summary" />
-    <meta name="theme-color" content="#0f1b2d" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#16181d" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />

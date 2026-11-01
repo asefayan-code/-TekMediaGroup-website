@@ -1,6 +1,6 @@
 ---
 import { site, fullAddress } from '../data/site';
-import { services } from '../data/services';
+import { services, hubs } from '../data/services';
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
@@ -9,16 +9,18 @@ const year = new Date().getFullYear();
       <p class="footer-brand">Tek Media Group</p>
       <p>{fullAddress}</p>
       <p><a href={site.phoneHref}>{site.phone}</a><br />Toll free <a href={site.tollFreeHref}>{site.tollFree}</a></p>
+      <p>Text <a href={site.textHref}>{site.textLine}</a></p>
       <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
       <p class="social">
         <a href={site.social.facebook} rel="noopener">Facebook</a>
         <a href={site.social.instagram} rel="noopener">Instagram</a>
         <a href={site.social.x} rel="noopener">X</a>
+        <a href={site.social.youtube} rel="noopener">YouTube</a>
       </p>
     </div>
     <div>
       <p class="footer-head">Services</p>
-      <ul>{services.map((s) => <li><a href={`/services/${s.slug}/`}>{s.short}</a></li>)}</ul>
+      <ul>{services.map((s) => <li><a href={`/services/${s.slug}/`}>{s.short}</a></li>)}{hubs.map((h) => <li><a href={h.href}>{h.short}</a></li>)}<li><a href="/capacitor-replacement/">Capacitor replacement</a></li></ul>
     </div>
     <div>
       <p class="footer-head">Customers</p>

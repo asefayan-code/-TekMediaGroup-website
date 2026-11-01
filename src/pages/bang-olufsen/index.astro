@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+import { site } from '../../data/site';
+import { boIntro, boPages } from '../../data/bang-olufsen';
+---
+<Base title={`${boIntro.title} in Burbank, CA`} description={boIntro.summary}>
+  <section class="page-hero"><div class="wrap">
+    <p class="crumbs"><a href="/">Home</a> / Bang &amp; Olufsen</p>
+    <h1>{boIntro.title}</h1>
+    <p>{boIntro.summary}</p>
+  </div></section>
+  <section class="section"><div class="wrap">
+    <div class="section-head">
+      <h2>Choose your product</h2>
+      <p>Each page lists the models we cover, common problems and what we do to fix them.</p>
+    </div>
+    <div class="grid grid-3">
+      {boPages.map((p) => (
+        <a class="card" href={`/bang-olufsen/${p.slug}/`}>
+          <h3>{p.short}</h3><p>{p.summary}</p><span class="more">Service details →</span>
+        </a>
+      ))}
+    </div>
+  </div></section>
+  <section class="section section-soft"><div class="wrap two-col">
+    <div>
+      <h2>Problems we fix every day</h2>
+      <ul class="check-list">{boIntro.common.map((c) => <li>{c}</li>)}</ul>
+      <h2>Where we serve</h2>
+      <p>Walk-in and drop-off in Burbank {site.hours[0].days}, {site.hours[0].time}. Pickup and delivery by appointment.</p>
+      <ul class="areas">{boIntro.areas.map((a) => <li>{a}</li>)}</ul>
+    </div>
+    <aside class="side-box">
+      <h3>Warranty or out of warranty</h3>
+      <p class="small muted">We're an authorized Bang &amp; Olufsen service center. Free estimates on every job.</p>
+      <a class="btn btn-primary" href={site.portal.newTicket}>Start a service request</a>
+      <a class="btn btn-outline" href={site.phoneHref}>Call {site.phone}</a>
+      <a class="btn btn-outline" href={site.textHref}>Text {site.textLine}</a>
+    </aside>
+  </div></section>
+</Base>

@@ -1,16 +1,23 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { services } from '../../data/services';
+import { services, hubs } from '../../data/services';
+const cards = [
+  ...services.map((s) => ({ href: `/services/${s.slug}/`, short: s.short, summary: s.summary, tags: s.tags ?? [] })),
+  ...hubs.map((h) => ({ ...h, tags: [] as string[] })),
+];
 ---
-<Base title="Repair Services" description="All repair services at Tek Media Group in Burbank: lenses, camcorders, Bang & Olufsen, projectors, monitors, hi-fi and reel-to-reel.">
-  <section class="page-hero"><div class="wrap"><h1>Repair services</h1><p>Pro video, broadcast and audio equipment, repaired in Burbank.</p></div></section>
+<Base title="Repair Services" description="All repair services at Tek Media Group in Burbank: lenses, cameras, decks, RED, projectors, monitors, Epson printers, Bang & Olufsen, hi-fi and reel-to-reel.">
+  <section class="page-hero"><div class="wrap"><h1>Repair services</h1><p>Pro video, broadcast, printing and audio equipment, repaired in Burbank.</p></div></section>
   <section class="section"><div class="wrap grid grid-3">
-    {services.map((s) => (
-      <a class="card" href={`/services/${s.slug}/`}>
+    {cards.map((s) => (
+      <a class="card" href={s.href}>
         <h3>{s.short}</h3>
-        <ul class="tags">{s.brands.map((b) => <li>{b}</li>)}</ul>
         <p>{s.summary}</p><span class="more">Learn more →</span>
       </a>
     ))}
+    <a class="card" href="/capacitor-replacement/">
+      <h3>Capacitor Replacement</h3>
+      <p>Why we replace the capacitors that need it, not every one on the board.</p><span class="more">Read more →</span>
+    </a>
   </div></section>
 </Base>

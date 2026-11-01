@@ -1,0 +1,30 @@
+---
+import { site } from '../data/site';
+import type { BrandPage } from '../data/brands';
+interface Props { title: string; summary: string; intro: string; brands: BrandPage[]; others: string[]; services: string[]; crumb: string }
+const { title, summary, intro, brands, others, services, crumb } = Astro.props;
+---
+<section class="page-hero"><div class="wrap">
+  <p class="crumbs"><a href="/">Home</a> / {crumb}</p>
+  <h1>{title}</h1><p>{summary}</p>
+</div></section>
+<section class="section"><div class="wrap two-col">
+  <div>
+    <p class="lede">{intro}</p>
+    <h2>Featured brands</h2>
+    <div class="brand-grid">{brands.map((b) => <a href={`/brands/${b.slug}/`}>{b.short}</a>)}</div>
+    <h2 style="margin-top:36px">We also service</h2>
+    <ul class="plain-list">{others.map((o) => <li>{o}</li>)}</ul>
+    <h2>Services</h2>
+    <ul class="check-list">{services.map((s) => <li>{s}</li>)}</ul>
+    <h2>Where we serve</h2>
+    <p>Walk-in service in Burbank, pickup and delivery from San Francisco to San Diego, and shipped repairs from all 50 states.</p>
+  </div>
+  <aside class="side-box">
+    <h3>Get a free estimate</h3>
+    <p class="small muted">Over three decades of vintage audio restoration.</p>
+    <a class="btn btn-primary" href={site.portal.newTicket}>Start a service request</a>
+    <a class="btn btn-outline" href={site.phoneHref}>Call {site.phone}</a>
+    <a class="btn btn-outline" href={site.textHref}>Text {site.textLine}</a>
+  </aside>
+</div></section>
