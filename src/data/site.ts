@@ -2,16 +2,16 @@
 export const site = {
   name: 'Tek Media Group',
   legalName: 'Tek Media Group',
-  url: 'https://tekmg.com',
+  url: 'https://tekmediagroup.com',
   tagline: 'Expert Electronics Service & Repair',
   description:
     'Burbank repair shop for professional lenses, camcorders, projectors, broadcast monitors, hi-fi receivers, vintage reel-to-reel and Bang & Olufsen. Free estimates, nationwide shipping.',
-  yearsInBusiness: 33, // TODO: old site says both "33 years" and "35+ years" — confirm
+  yearsInBusiness: 33,
   phone: '(818) 244-4440',
   phoneHref: 'tel:+18182444440',
   tollFree: '(800) 255-5045',
   tollFreeHref: 'tel:+18002555045',
-  email: 'JT@tekmg.com', // TODO: old site also lists as@tekmg.com — confirm which is public
+  email: 'as@tekmg.com',
   address: {
     street: '711 South Victory Blvd',
     city: 'Burbank',

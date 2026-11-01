@@ -1,19 +1,141 @@
 ---
 import Base from '../layouts/Base.astro';
-import { site } from '../data/site';
-// DRAFT — review before launch, or replace with the text from the old Privacy-Policy.aspx page.
+import { site, fullAddress } from '../data/site';
+const effective = 'November 1, 2026';
 ---
-<Base title="Privacy Policy">
-  <section class="page-hero"><div class="wrap"><h1>Privacy policy</h1></div></section>
+<Base title="Privacy Policy" description="How Tek Media Group collects, uses and shares personal information, and your privacy rights under California and U.S. law.">
+  <section class="page-hero"><div class="wrap"><h1>Privacy policy</h1><p>Effective {effective}</p></div></section>
   <section class="section"><div class="wrap prose">
-    <p>This policy explains what information Tek Media Group collects and how we use it.</p>
+    <p>
+      This Privacy Policy explains how {site.name} ("we," "us," "our") collects, uses, shares and protects personal
+      information when you visit our website, request service, or otherwise interact with us. It also describes the
+      rights you may have under the California Consumer Privacy Act, as amended by the California Privacy Rights Act
+      (together, "CCPA"), and other U.S. privacy laws. This section also serves as our Notice at Collection for
+      California residents.
+    </p>
+
     <h2>Information we collect</h2>
-    <p>When you request service, we collect your name, contact details, shipping address and information about your equipment. Service tickets, estimates, invoices and payments are handled through our repair management system, RepairShopr.</p>
+    <p>Depending on how you interact with us, we may collect the following categories of personal information:</p>
+    <ul class="check-list">
+      <li><strong>Identifiers:</strong> name, email address, phone number, postal and shipping address, account login, IP address and online identifiers.</li>
+      <li><strong>Customer records:</strong> billing details and payment information. Card numbers are handled by our payment processors and are not stored on our website.</li>
+      <li><strong>Commercial information:</strong> equipment you send us, service requests, estimates, repairs, invoices and purchase history.</li>
+      <li><strong>Internet and device activity:</strong> pages viewed, links clicked, browser and device type, and similar information collected through cookies, pixels and similar technologies.</li>
+      <li><strong>Approximate location:</strong> derived from your IP address or the address you provide.</li>
+      <li><strong>Communications:</strong> messages, emails, call notes and other information you share with us.</li>
+    </ul>
+    <p>We do not knowingly collect sensitive personal information as defined by the CCPA, and we do not use any sensitive information to infer characteristics about you.</p>
+
+    <h2>Where we get it</h2>
+    <p>Directly from you; automatically from your browser or device when you use our website; from equipment manufacturers for warranty service; and from service providers who help us operate our business.</p>
+
     <h2>How we use it</h2>
-    <p>We use your information to process repairs, contact you about your service, ship equipment and take payment. We do not sell your personal information.</p>
-    <h2>Sharing</h2>
-    <p>We share information only with service providers we need to complete your repair, such as shipping carriers, payment processors and manufacturers for warranty claims.</p>
-    <h2>Contact</h2>
-    <p>Questions about this policy? Email <a href={`mailto:${site.email}`}>{site.email}</a> or call <a href={site.phoneHref}>{site.phone}</a>.</p>
+    <ul class="check-list">
+      <li>To diagnose, repair, ship and return your equipment, and to process warranty claims.</li>
+      <li>To provide estimates, invoices, payment processing and customer support.</li>
+      <li>To communicate with you about your service, including ticket updates.</li>
+      <li>To send you news, offers and promotions. You can opt out at any time.</li>
+      <li>To advertise our services, including showing ads to you and to people similar to our customers on websites, apps and social media, and to measure how well our ads work.</li>
+      <li>To operate, secure and improve our website and services, and to prevent fraud.</li>
+      <li>To comply with the law and enforce our terms.</li>
+    </ul>
+
+    <h2>How we share it</h2>
+    <p>We share personal information with the following categories of recipients:</p>
+    <ul class="check-list">
+      <li><strong>Service providers</strong> that act on our behalf, such as repair management software, payment processors, shipping carriers, email and hosting providers. They may use the information only to provide services to us.</li>
+      <li><strong>Equipment manufacturers</strong> when needed to perform warranty or authorized service.</li>
+      <li><strong>Advertising and marketing partners.</strong> We may share identifiers such as your email address and phone number (which may be converted into a scrambled, hashed form before sharing), along with website activity collected through cookies and pixels, with advertising and marketing partners. They use it to match you to accounts on their platforms, show you our ads, find new customers similar to ours, and measure ad results.</li>
+      <li><strong>Legal and safety:</strong> government authorities or others when required by law or to protect our rights, customers or the public.</li>
+      <li><strong>Business transfers:</strong> a buyer or successor if our business is sold, merged or reorganized.</li>
+    </ul>
+
+    <h2>"Selling" and "sharing" under California law</h2>
+    <p>
+      We do not sell personal information for money. However, providing identifiers and website activity to advertising
+      and marketing partners for cross-context behavioral advertising may be considered "sharing," and in some cases
+      "selling," under the CCPA. In the past 12 months we may have shared the following categories for that purpose:
+      identifiers and internet or device activity. You have the right to opt out at any time; see
+      <a href="/do-not-sell-or-share/">Do Not Sell or Share My Personal Information</a>.
+    </p>
+    <p>
+      We honor the <strong>Global Privacy Control (GPC)</strong> browser signal as a valid opt-out request for that
+      browser. We do not knowingly sell or share the personal information of consumers under 16 years of age.
+    </p>
+
+    <h2>Cookies and similar technologies</h2>
+    <p>
+      Our website may use cookies, pixels and similar technologies to keep the site working, understand how it is used,
+      and support advertising. You can block or delete cookies in your browser settings, use your browser's GPC setting,
+      or opt out as described above. Our website does not respond to "Do Not Track" signals, but it does honor GPC.
+    </p>
+
+    <h2>Marketing emails and texts</h2>
+    <p>
+      You can unsubscribe from marketing emails at any time using the link in any message or by contacting us.
+      We will still send messages about your repairs and account. We send marketing text messages only with your
+      consent; reply STOP to opt out.
+    </p>
+
+    <h2>How long we keep it</h2>
+    <p>
+      We keep personal information for as long as needed for the purposes above. Service and transaction records are
+      generally kept for up to seven years for warranty, tax and legal reasons. Marketing data is kept until you opt
+      out or ask us to delete it. We then delete or de-identify it.
+    </p>
+
+    <h2>Your California privacy rights</h2>
+    <p>If you are a California resident, you have the right to:</p>
+    <ul class="check-list">
+      <li><strong>Know</strong> what personal information we have collected about you, where it came from, why we use it and who we share it with, and get a copy of it.</li>
+      <li><strong>Delete</strong> personal information we collected from you, with some legal exceptions.</li>
+      <li><strong>Correct</strong> inaccurate personal information.</li>
+      <li><strong>Opt out</strong> of the sale or sharing of your personal information, including for cross-context behavioral advertising.</li>
+      <li><strong>Not be discriminated against</strong> for exercising these rights. We will not deny service or charge different prices because you used your privacy rights.</li>
+    </ul>
+    <p>
+      We do not use or disclose sensitive personal information for purposes that would trigger the right to limit
+      its use.
+    </p>
+    <p>
+      <strong>How to submit a request:</strong> email <a href={`mailto:${site.email}?subject=Privacy%20request`}>{site.email}</a>
+      or call <a href={site.tollFreeHref}>{site.tollFree}</a>. To protect you, we will verify your identity by matching
+      information you give us with information we already have, such as your name, email, phone number or a recent ticket
+      number. You may use an authorized agent; we may ask for proof of the agent's authority and verify your identity
+      directly. We will respond within 45 days, and let you know if we need more time as allowed by law.
+    </p>
+    <p>
+      <strong>Shine the Light:</strong> California residents may request information about personal information we
+      disclosed to third parties for their own direct marketing in the prior calendar year by contacting us as shown below.
+    </p>
+
+    <h2>Privacy rights in other states</h2>
+    <p>
+      Residents of other states with consumer privacy laws may have similar rights to access, correct, delete and get a
+      copy of personal information, and to opt out of targeted advertising and sales. Submit requests the same way as
+      above. If we deny your request, you may appeal by replying to our decision with the subject line "Appeal."
+    </p>
+
+    <h2>Children</h2>
+    <p>Our services are not directed to children under 13, and we do not knowingly collect their personal information.</p>
+
+    <h2>Security</h2>
+    <p>We use reasonable administrative, technical and physical safeguards to protect personal information. No method of transmission or storage is completely secure.</p>
+
+    <h2>Information on your devices</h2>
+    <p>
+      Equipment sent for repair may contain your own data. Please back up and remove personal data before service where
+      possible. We do not access your stored content except as needed to test and repair the equipment.
+    </p>
+
+    <h2>Changes to this policy</h2>
+    <p>We may update this policy from time to time. We will post the new version here and change the effective date above. We review it at least once a year.</p>
+
+    <h2>Contact us</h2>
+    <p>
+      {site.name}<br />{fullAddress}<br />
+      Email: <a href={`mailto:${site.email}`}>{site.email}</a><br />
+      Phone: <a href={site.phoneHref}>{site.phone}</a> · Toll free: <a href={site.tollFreeHref}>{site.tollFree}</a>
+    </p>
   </div></section>
 </Base>

@@ -1,6 +1,6 @@
 # Tek Media Group website
 
-Marketing site for [Tek Media Group](https://tekmg.com), an electronics repair shop in Burbank, CA.
+Marketing site for [Tek Media Group](https://tekmediagroup.com), an electronics repair shop in Burbank, CA.
 Built with [Astro](https://astro.build) as a static site and hosted on [Render](https://render.com).
 
 Service tickets, ticket lookup, invoices, payments and customer login stay on RepairShopr;
@@ -25,7 +25,14 @@ npm run build    # outputs to dist/
 
 1. In Render, choose **New > Blueprint** and pick this GitHub repo. Render reads `render.yaml`.
 2. Every push to `main` redeploys. Pull requests get preview URLs.
-3. To go live, add `tekmg.com` and `www.tekmg.com` under the service's **Custom Domains**
+3. To go live, add `tekmediagroup.com` and `www.tekmediagroup.com` under the service's **Custom Domains**
    and update DNS as Render instructs.
 
 `render.yaml` also redirects the old `.aspx` URLs to the new pages so search rankings and old links keep working.
+
+## Privacy compliance notes
+
+- Footer links to `/privacy/`, `/terms/` and `/do-not-sell-or-share/` (California CCPA/CPRA).
+- **Any advertising pixel or tag added later must not load when `navigator.globalPrivacyControl` is true**, because the privacy policy promises to honor GPC.
+- Customers who opt out by email or phone must be removed from any customer lists uploaded to advertising platforms.
+- Policies are drafts written without a lawyer; have them reviewed before relying on them.

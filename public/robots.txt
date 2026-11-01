@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tekmg.com/sitemap-index.xml
+Sitemap: https://tekmediagroup.com/sitemap-index.xml

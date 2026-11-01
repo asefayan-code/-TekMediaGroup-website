@@ -1,18 +1,106 @@
 ---
 import Base from '../layouts/Base.astro';
-import { site } from '../data/site';
-// DRAFT — review before launch, or replace with the text from the old Terms.aspx page.
+import { site, fullAddress } from '../data/site';
+const effective = 'November 1, 2026';
 ---
-<Base title="Terms of Service">
-  <section class="page-hero"><div class="wrap"><h1>Terms of service</h1></div></section>
+<Base title="Terms of Service" description="Terms that apply to Tek Media Group repair services and use of this website.">
+  <section class="page-hero"><div class="wrap"><h1>Terms of service</h1><p>Effective {effective}</p></div></section>
   <section class="section"><div class="wrap prose">
-    <h2>Estimates</h2>
-    <p>Estimates are free. We do not charge a diagnosis fee on out-of-warranty products. No repair work begins until you approve the estimate.</p>
-    <h2>Shipping</h2>
-    <p>Customers are responsible for insuring equipment shipped to us. Please remove accessories and media before shipping.</p>
-    <h2>Payment</h2>
-    <p>We accept {site.paymentMethods.join(', ')}. Payment is due before equipment is returned.</p>
+    <p>
+      These Terms of Service ("Terms") apply to repair and service work performed by {site.name} ("we," "us," "our")
+      and to your use of this website. By requesting service, delivering equipment to us, or using this website, you
+      agree to these Terms.
+    </p>
+
+    <h2>1. Estimates and authorization</h2>
+    <p>
+      Estimates are free, and we do not charge a diagnosis fee on out-of-warranty products. We will give you a written
+      estimate and will not perform work or charge for parts or labor beyond the estimate without your authorization.
+      If we find that more work is needed, we will contact you for approval first. Estimates are valid for 30 days.
+    </p>
+
+    <h2>2. Warranty repairs</h2>
+    <p>
+      Manufacturer warranty repairs are performed under the manufacturer's terms. You may need to provide proof of
+      purchase. If the manufacturer determines that a product is not covered, we will give you an estimate before
+      doing any work.
+    </p>
+
+    <h2>3. Parts and repair warranty</h2>
+    <p>
+      Parts and labor are covered by the warranty stated on your invoice. The warranty covers the specific repair
+      performed and does not cover unrelated failures, physical or liquid damage, misuse, or repairs by others after
+      the equipment leaves our shop. Replaced parts may be discarded unless you ask for them back when you approve the
+      estimate. We may use new, refurbished, or equivalent parts as permitted by law; the invoice will say so.
+    </p>
+
+    <h2>4. Shipping</h2>
+    <p>
+      If you ship equipment to us, pack it securely, remove accessories, media and memory cards, and include your ticket
+      number. You are responsible for shipping costs and for insuring the shipment for its full value; we are not
+      responsible for damage or loss in transit to us. Return shipping is charged as shown on your invoice.
+    </p>
+
+    <h2>5. Your data</h2>
+    <p>
+      Repair work can result in loss of stored data. Back up anything you want to keep before service. We are not
+      responsible for loss of data, software, settings or media stored on or inserted in your equipment.
+    </p>
+
+    <h2>6. Payment</h2>
+    <p>
+      Payment is due when the repair is complete and before equipment is released or shipped back. We accept the payment
+      methods listed on our website and invoices. Unpaid balances may be subject to collection as permitted by law.
+    </p>
+
+    <h2>7. Pickup and unclaimed equipment</h2>
+    <p>
+      Please collect or arrange return of your equipment within 30 days after we notify you that it is ready or that
+      you declined the estimate. Equipment that is not claimed after notice may be treated as abandoned and disposed of
+      or sold to cover charges, as permitted by California law, including written notice to you before any sale.
+    </p>
+
+    <h2>8. Limitation of liability</h2>
+    <p>
+      To the fullest extent permitted by law, our total liability for any claim arising from our services is limited to
+      the amount you paid for the service giving rise to the claim. We are not liable for indirect, incidental,
+      consequential or lost-profit damages, including production downtime or lost data. Nothing in these Terms limits
+      rights you have under California or federal law that cannot be waived.
+    </p>
+
+    <h2>9. Communications</h2>
+    <p>
+      By giving us your email address or phone number, you agree that we may contact you about your service. We will
+      send marketing messages only as described in our <a href="/privacy/">Privacy Policy</a>, and you can opt out at any time.
+    </p>
+
+    <h2>10. Use of this website</h2>
+    <p>
+      Website content is for general information and may change without notice. Prices, services and turnaround times
+      shown are estimates and are not guaranteed. Do not misuse the website, interfere with its operation, or attempt to
+      access accounts or data that are not yours. All content, logos and design are owned by {site.name} or used with
+      permission. Product and brand names belong to their respective owners and are used only to describe equipment we
+      service; their use does not imply endorsement unless stated.
+    </p>
+
+    <h2>11. Privacy</h2>
+    <p>Our <a href="/privacy/">Privacy Policy</a> explains how we handle personal information and is part of these Terms.</p>
+
+    <h2>12. Governing law and disputes</h2>
+    <p>
+      These Terms are governed by the laws of the State of California and applicable U.S. federal law. Before filing a
+      claim, please contact us so we can try to resolve it informally. Any dispute that is not resolved will be heard in
+      the state or federal courts located in Los Angeles County, California, or in small claims court where eligible.
+    </p>
+
+    <h2>13. Changes</h2>
+    <p>We may update these Terms. The version posted on this page on the date you request service applies to that service.</p>
+
     <h2>Contact</h2>
-    <p>Questions? Email <a href={`mailto:${site.email}`}>{site.email}</a> or call <a href={site.phoneHref}>{site.phone}</a>.</p>
+    <p>
+      {site.name}<br />{fullAddress}<br />
+      Email: <a href={`mailto:${site.email}`}>{site.email}</a><br />
+      Phone: <a href={site.phoneHref}>{site.phone}</a>
+    </p>
   </div></section>
 </Base>
